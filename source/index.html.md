@@ -10,7 +10,7 @@ toc_footers:
 
 includes:
   - errors
-  - anatomy_of_theme
+  - theme_anatomy
 
 search: true
 ---

@@ -1,23 +1,23 @@
 # 1. The Anatomy of a Theme 
 Every 39shops theme consist of certain basic elements which work together to
 show up the online store. These elements are:
-• Templates
-• Page Parts
-• Stylesheets
-• JavaScript
-• Images
+â€¢ Templates
+â€¢ Page Parts
+â€¢ Stylesheets
+â€¢ JavaScript
+â€¢ Images
 
 ## 1.1. Templates
 Templates are specialized HTML pages with *.liquid extension to parse dynamic
 tags supported by 39shops. 39shops provides a set of standard templates
 based on the functions each of them perform. Here are the templates provided
 with every 39shops theme:
-• layout
-• home
-• catalogue
-• product detail
-• page
-• cart
+â€¢ layout
+â€¢ home
+â€¢ catalogue
+â€¢ product detail
+â€¢ page
+â€¢ cart
 
 ### 1.1.1. Layout
 The layout holds the most common elements of the website. It behaves like a
@@ -47,8 +47,8 @@ description, alternate photos, produce price etc.
 
 ### 1.1.5. Page
 Using this template you can customize the design of CMS based pages also
-called ‘custom pages’. It is used to display all the content pages that you added
-from the ‘Pages’ section of your store administration.
+called â€˜custom pagesâ€™. It is used to display all the content pages that you added
+from the â€˜Pagesâ€™ section of your store administration.
 
 ### 1.1.6. Cart
 Using this template you can customize the design of your shopping cart page. 
@@ -65,14 +65,13 @@ change the promotional banner, you will only need to modify the page part.
 
 ## 1.3. Stylesheets
 Just like any other website, you can attach Stylesheet to your templates. In your
-39shops theme, Stylesheets are linked with the ‘Layout’ template.
+39shops theme, Stylesheets are linked with the â€˜Layoutâ€™ template.
 
 
 ## 1.4. JavaScript
-JavaScript can be also included in the same way as Stylesheets with the ‘Layout’
+JavaScript can be also included in the same way as Stylesheets with the â€˜Layoutâ€™
 template of your theme. 39Shops themes support all types of JavaScript
 including Jquery.
-
 
 ## 1.5. Images
 A default images folder is provided with every 39shops theme. It stores all types
@@ -80,4 +79,4 @@ of graphics such as background images, bullets, icons, banners etc. associated
 with your theme.
 
 Note: The Images folder associated with your theme not store product photos or any files
-related to the content of your online store. Such files are stored in the ‘File Manager’. 
+related to the content of your online store. Such files are stored in the â€˜File Managerâ€™.

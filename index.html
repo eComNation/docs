@@ -283,64 +283,6 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </tbody></table>
 
-          <h1 id="errors">Errors</h1>
-
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request &ndash; Your request sucks</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized &ndash; Your API key is wrong</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone &ndash; The kitten requested has been removed from our servers</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&rsquo;m a teapot</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
-</tr>
-</tbody></table>
-
           <h1 id="1-the-anatomy-of-a-theme">1. The Anatomy of a Theme</h1>
 
 <p>Every 39shops theme consist of certain basic elements which work together to
@@ -432,6 +374,105 @@ with your theme.</p>
 
 <p>Note: The Images folder associated with your theme not store product photos or any files
 related to the content of your online store. Such files are stored in the ‘File Manager’.</p>
+
+          <h1 id="2-working-with-a-39shops-theme">2. Working with a 39shops Theme</h1>
+
+<p>Every 39shops store-front comes with a pre-installed theme. The quickest way
+to create a new theme is to modify the pre-installed theme and rename it with
+your own. To do this, log-in to your store administration and visit My Themes
+sub-menu under the Design &amp; Navigation tab.</p>
+
+<h2 id="2-1-online-theme-editor">2.1. Online theme editor</h2>
+
+<p>The online theme editor has following major sections:
+ | 
+&mdash;&mdash;&mdash;&mdash;&mdash; | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+Templates | Templates All liquid templates associated with your theme are available for
+editing in this section
+Page parts | Page parts By default side_nav is provided, you can add more page parts as
+needed by clicking on the add page part icon.
+Stylesheets | Stylesheets A default stylesheet default.css is available with the theme. You
+can modify this stylesheet or add more Stylesheets by clicking on
+the add new stylesheet icon.
+JavaScript | JavaScript A blank default.js is provided with the theme. You can added
+more by clicking on add new javascript icon.
+Images | Stores all graphics, background, icons etc. related to a theme
+Preferences | Stores product photo resizing preferences related to your theme</p>
+
+<h3 id="2-1-1-modifying-theme-element">2.1.1. Modifying theme element</h3>
+
+<p>Once you click on a theme element to modify, you will see that rest of the
+elements are availably towards the right side bar. This allows you to switch to
+various theme elements quickly without going back to the main page.</p>
+
+<h3 id="2-1-2-previewing-changes">2.1.2. Previewing changes</h3>
+
+<p>As you modify your theme elements, you can open your store url in another
+window and refresh it to view the updated changes.</p>
+
+<p><em>Important Note:</em>
+Sometimes the changes you make may not be visible instantly. It is advisable to refresh your
+browser and remove the cache if do not see the changes.
+For Windows user: press <em>ctrl+f5</em> to allow browser to bypass local cache and request the design
+elements from the server.</p>
+
+          <h1 id="errors">Errors</h1>
+
+<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
+
+<p>The Kittn API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request &ndash; Your request sucks</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized &ndash; Your API key is wrong</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found &ndash; The specified kitten could not be found</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone &ndash; The kitten requested has been removed from our servers</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&rsquo;m a teapot</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
+</tr>
+</tbody></table>
 
       </div>
       <div class="dark-box">

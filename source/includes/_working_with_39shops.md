@@ -1,8 +1,8 @@
 # 2. Working with a 39shops Theme
 Every 39shops store-front comes with a pre-installed theme. The quickest way
 to create a new theme is to modify the pre-installed theme and rename it with
-your own. To do this, log-in to your store administration and visit ‘My Themes’
-sub-menu under the ‘Design & Navigation’ tab.
+your own. To do this, log-in to your store administration and visit My Themes
+sub-menu under the Design & Navigation tab.
 
 ## 2.1. Online theme editor
 The online theme editor has following major sections:
@@ -10,13 +10,13 @@ The online theme editor has following major sections:
 --------------- | ------------------------------------------------------------
 Templates | Templates All liquid templates associated with your theme are available for
 editing in this section
-Page parts | Page parts By default ‘side_nav’ is provided, you can add more page parts as
-needed by clicking on the ‘add page part’ icon.
-Stylesheets | Stylesheets A default stylesheet ‘default.css’ is available with the theme. You
+Page parts | Page parts By default side_nav is provided, you can add more page parts as
+needed by clicking on the add page part icon.
+Stylesheets | Stylesheets A default stylesheet default.css is available with the theme. You
 can modify this stylesheet or add more Stylesheets by clicking on
-the ‘add new stylesheet’ icon.
-JavaScript | JavaScript A blank ‘default.js’ is provided with the theme. You can added
-more by clicking on ‘add new javascript’ icon.
+the add new stylesheet icon.
+JavaScript | JavaScript A blank default.js is provided with the theme. You can added
+more by clicking on add new javascript icon.
 Images | Stores all graphics, background, icons etc. related to a theme
 Preferences | Stores product photo resizing preferences related to your theme
 

@@ -9,14 +9,12 @@ toc_footers:
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - errors
   - theme_anatomy
+  - working_with_39shops
+  - errors
 
 search: true
 ---
-
-
-
 
 # Authentication
 

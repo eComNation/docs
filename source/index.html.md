@@ -2,10 +2,7 @@
 title: eComNation developer docs.
 
 language_tabs:
-  - shell
-  - ruby
-  - python
-  - javascript
+  - liquid
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -31,6 +28,10 @@ This example API documentation page was created with [Slate](https://github.com/
 
 ```liquid
 {{product.name}}
+
+{% for product in collection.products %}
+  {{ product.title }}
+{% endfor %}
 ```
 
 ```python

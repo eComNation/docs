@@ -5,7 +5,7 @@ your own. To do this, log-in to your store administration and visit ‘My Themes’
 sub-menu under the ‘Design & Navigation’ tab.
 
 ## 2.1. Online theme editor
-The online theme editor has following major sections
+The online theme editor has following major sections:
  | 
 --------------- | ------------------------------------------------------------
 Templates | Templates All liquid templates associated with your theme are available for

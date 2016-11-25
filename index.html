@@ -286,25 +286,31 @@ Remember — a happy kitten is an authenticated kitten!
           <h1 id="1-the-anatomy-of-a-theme">1. The Anatomy of a Theme</h1>
 
 <p>Every 39shops theme consist of certain basic elements which work together to
-show up the online store. These elements are:
-• Templates
-• Page Parts
-• Stylesheets
-• JavaScript
-• Images</p>
+show up the online store. These elements are:</p>
+
+<ul>
+<li>Templates</li>
+<li>Page Parts</li>
+<li>Stylesheets</li>
+<li>JavaScript</li>
+<li>Images</li>
+</ul>
 
 <h2 id="1-1-templates">1.1. Templates</h2>
 
 <p>Templates are specialized HTML pages with *.liquid extension to parse dynamic
 tags supported by 39shops. 39shops provides a set of standard templates
 based on the functions each of them perform. Here are the templates provided
-with every 39shops theme:
-• layout
-• home
-• catalogue
-• product detail
-• page
-• cart</p>
+with every 39shops theme:</p>
+
+<ul>
+<li>layout</li>
+<li>home</li>
+<li>catalogue</li>
+<li>product detail</li>
+<li>page</li>
+<li>cart</li>
+</ul>
 
 <h3 id="1-1-1-layout">1.1.1. Layout</h3>
 
@@ -372,8 +378,10 @@ including Jquery.</p>
 of graphics such as background images, bullets, icons, banners etc. associated
 with your theme.</p>
 
-<p>Note: The Images folder associated with your theme not store product photos or any files
-related to the content of your online store. Such files are stored in the ‘File Manager’.</p>
+<aside class="notice">
+Note: The Images folder associated with your theme not store product photos or any files
+related to the content of your online store. Such files are stored in the ‘File Manager’.
+</aside>
 
           <h1 id="2-working-with-a-39shops-theme">2. Working with a 39shops Theme</h1>
 
@@ -384,20 +392,39 @@ sub-menu under the Design &amp; Navigation tab.</p>
 
 <h2 id="2-1-online-theme-editor">2.1. Online theme editor</h2>
 
-<p>The online theme editor has following major sections:
- | 
-&mdash;&mdash;&mdash;&mdash;&mdash; | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-Templates | Templates All liquid templates associated with your theme are available for
-editing in this section
-Page parts | Page parts By default side_nav is provided, you can add more page parts as
-needed by clicking on the add page part icon.
-Stylesheets | Stylesheets A default stylesheet default.css is available with the theme. You
-can modify this stylesheet or add more Stylesheets by clicking on
-the add new stylesheet icon.
-JavaScript | JavaScript A blank default.js is provided with the theme. You can added
-more by clicking on add new javascript icon.
-Images | Stores all graphics, background, icons etc. related to a theme
-Preferences | Stores product photo resizing preferences related to your theme</p>
+<p>The online theme editor has following major sections:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Desciption</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Templates</td>
+<td>All liquid templates associated with your theme are available for editing in this section</td>
+</tr>
+<tr>
+<td>Page parts</td>
+<td>By default side_nav is provided, you can add more page parts as needed by clicking on the add page part icon.</td>
+</tr>
+<tr>
+<td>Stylesheets</td>
+<td>A default stylesheet default.css is available with the theme. You can modify this stylesheet or add more Stylesheets by clicking on the add new stylesheet icon.</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>A blank default.js is provided with the theme. You can added more by clicking on add new javascript icon.</td>
+</tr>
+<tr>
+<td>Images</td>
+<td>Stores all graphics, background, icons etc. related to a theme</td>
+</tr>
+<tr>
+<td>Preferences</td>
+<td>Stores product photo resizing preferences related to your theme</td>
+</tr>
+</tbody></table>
 
 <h3 id="2-1-1-modifying-theme-element">2.1.1. Modifying theme element</h3>
 
@@ -410,11 +437,13 @@ various theme elements quickly without going back to the main page.</p>
 <p>As you modify your theme elements, you can open your store url in another
 window and refresh it to view the updated changes.</p>
 
-<p><em>Important Note:</em>
+<aside class="notice">
+Important Note:
 Sometimes the changes you make may not be visible instantly. It is advisable to refresh your
 browser and remove the cache if do not see the changes.
-For Windows user: press <em>ctrl+f5</em> to allow browser to bypass local cache and request the design
-elements from the server.</p>
+For Windows user: press ctrl+f5 to allow browser to bypass local cache and request the design
+elements from the server.
+</aside>
 
           <h1 id="errors">Errors</h1>
 
@@ -430,7 +459,7 @@ elements from the server.</p>
 </thead><tbody>
 <tr>
 <td>400</td>
-<td>Bad Request &ndash; Your request sucks</td>
+<td>Bad Request</td>
 </tr>
 <tr>
 <td>401</td>
@@ -468,11 +497,189 @@ elements from the server.</p>
 <td>500</td>
 <td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
 </tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
-</tr>
 </tbody></table>
+
+          <h1 id="3-tags">3. Tags</h1>
+
+<h2 id="3-1-tag-basics">3.1. Tag Basics</h2>
+
+<p>39shops has two types of special operators used to render dynamic content in the HTML templates. They are <strong>Variables</strong> and <strong>Blocks</strong>.</p>
+
+<h3 id="3-1-1-variables">3.1.1. Variables</h3>
+
+<p>Variables are used to insert dynamic data like product title, product price etc.</p>
+
+<blockquote>
+<p>Here is an example of variable:</p>
+</blockquote>
+<pre class="highlight liquid"><code>&lt;html&gt; 
+&lt;body&gt; 
+  &lt;p&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>&lt;/p&gt; 
+&lt;/body&gt; 
+&lt;/html&gt; 
+</code></pre>
+
+<h3 id="3-1-2-blocks">3.1.2. Blocks</h3>
+
+<p>Blocks are either used to render a block of HTML for set of data (example: product listing), or to conditionally render a block of HTML.</p>
+
+<blockquote>
+<p>Here is an example of a block:</p>
+</blockquote>
+<pre class="highlight liquid"><code>&lt;html&gt; 
+&lt;body&gt; 
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>product<span class="w"> </span>in<span class="w"> </span>store.paginated_products<span class="w"> </span><span class="p">%}</span>
+  &lt;li&gt; 
+           <span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>
+  &lt;/li&gt; 
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span> 
+&lt;/body&gt; 
+&lt;/html&gt;
+</code></pre>
+
+<p>In the example, the block starts with the tag <strong>{% for product in store.paginated_products %}</strong> and ends with <strong>{% endfor %}</strong>
+In between the bocks  we have the variable to display product title. The <strong>{{product.name}}</strong> variable will be looped with <em>li</em> HTML tag to display a list of ‘product title’.</p>
+
+<aside class="notice">
+Note: Block always begins and ends with a single curly bracket and a percentage sign ‘{% &hellip; %}’ while a variable begins and end with double curly brackets ‘{{ &hellip; }}‘
+</aside>
+
+<h3 id="3-1-3-types-of-blocks">3.1.3 Types of Blocks</h3>
+
+<p>Mainly, there are two types of blocks supported by 39shops:</p>
+
+<p>The <em>&lsquo;For&rsquo;</em> block:</p>
+
+<p>{% for &hellip; in &hellip; %}
+&hellip;
+{% endfor %}</p>
+
+<p>This block is used when certain list of items are to be displayed. For example. product list, category list, list of navigation links etc. You can use this block only with dynamic tags.</p>
+
+<p>The <em>&#39;If&rsquo;</em> block:</p>
+
+<p>This block is used when certain data or tag should be displayed conditionally. You can use this tag block anywhere, either with static HTML elements or dynamic tags.</p>
+
+<p>{% if &hellip;.. %}
+&hellip;&hellip;
+{% endif %}</p>
+
+<blockquote>
+<p>Here is an example of the &#39;If&rsquo; block</p>
+</blockquote>
+<pre class="highlight liquid"><code>&lt;html&gt;
+&lt;head&gt;
+.
+&lt;/head&gt;
+&lt;body&gt;
+<span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">store</span><span class="p">.</span><span class="nv">payment_enabled</span><span class="err">?</span><span class="w"> </span><span class="p">%}</span>
+&lt;button value="Checkout" &gt;Checkout&lt;/button&gt;
+<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>In the example, the <strong>{% if store.payment_enabled? %}</strong> condition checks if any payment option is enabled for the store. If a payment option is enabled, the Checkout button should be displayed otherwise it should not displayed.</p>
+
+<h2 id="3-2-using-stylesheets-and-javascript">3.2. Using Stylesheets and JavaScript</h2>
+
+<p>Stylesheets and JavaScripts are the fundamental building blocks of any design. You can insert Stylesheets and JavaScripts into your 39shops theme within the <em>head</em> tag of your &#39;Layout&rsquo;. Here are the tags:</p>
+
+<blockquote>
+<p><strong>For Stylesheet:</strong>
+<code class="prettyprint">liquid
+&lt;link href=&quot;{{ current_theme.stylesheet_path }}/stylesheet-file.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;
+</code></p>
+
+<p><strong>For JavaScript:</strong>
+<code class="prettyprint">liquid
+&lt;script src=&quot;{{ current_theme.javascript_path }}/javascript-file.js&quot; type=&quot;text/Javascript&quot;&gt;&lt;/script&gt;
+</code></p>
+
+<p>Here is an example:</p>
+</blockquote>
+<pre class="highlight liquid"><code>&lt;head&gt;
+&lt;title&gt;My pet store&lt;/title&gt;
+&lt;link href="<span class="p">{{</span><span class="w"> </span><span class="nv">current_theme</span><span class="p">.</span><span class="nv">stylesheet_path</span><span class="w"> </span><span class="p">}}</span>/default.css" rel="stylesheet" type="text/css"/&gt;
+&lt;link href="<span class="p">{{</span><span class="w"> </span><span class="nv">current_theme</span><span class="p">.</span><span class="nv">stylesheet_path</span><span class="w"> </span><span class="p">}}</span>/orbit.css" rel="stylesheet" type="text/css"/&gt;
+&lt;script src="<span class="p">{{</span><span class="w"> </span><span class="nv">current_theme</span><span class="p">.</span><span class="nv">javascript_path</span><span class="w"> </span><span class="p">}}</span>/default.js" type="text/Javascript"&gt;&lt;/script&gt;
+&lt;script src="<span class="p">{{</span><span class="w"> </span><span class="nv">current_theme</span><span class="p">.</span><span class="nv">javascript_path</span><span class="w"> </span><span class="p">}}</span>/product_hover.js" type="text/Javascript"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+...
+&lt;/body&gt;
+</code></pre>
+
+<p>As shown in the example, the tags to insert Stylsheet and JavaScript are almost similar. The first part of the tag &ldquo;current_theme&rdquo; finds out the current theme and the second part <strong>.stylesheet_path</strong> and <strong>.javascript_path</strong> finds out the location of the particular stylesheet or Javascript file. This tag is followed by a forward slash &ldquo;/&rdquo; and then the actual stylesheet or javascript file name. Likewise, you can attach multiple JavaScript and Stylesheets with your theme.</p>
+
+<h2 id="3-3-inserting-images">3.3. Inserting Images</h2>
+
+<p>You can insert image to any template page including the &#39;Layout&rsquo; template. In a normal website you use the <em>&#39;img&rsquo;</em> HTML tag to insert images. In case of 39shop, we also use the &#39;img&rsquo; tag but the path to image is specified using this dynamic tag: <strong>{{ current_theme.image_path }}</strong>.</p>
+
+<blockquote>
+<p>Let me show you the usage with an example:</p>
+</blockquote>
+<pre class="highlight liquid"><code>&lt;img src="<span class="p">{{</span><span class="w"> </span><span class="nv">current_theme</span><span class="p">.</span><span class="nv">image_path</span><span class="w"> </span><span class="p">}}</span>/american-express.png" alt=" logo"/&gt;
+</code></pre>
+
+<p>In this example, &#39;american-express.png&rsquo; is the image file stored in the &#39;images&rsquo; folder associated with the theme. The tag <strong>{{ current_theme.image_path }}</strong> is used inside the &#39;img src=&ldquo;..&rdquo;&rsquo; Attribute followed by a forward slash &rsquo;/&rsquo; and then the name of the image file to be displayed.</p>
+
+<h2 id="3-4-inserting-page-parts">3.4. Inserting Page Parts</h2>
+
+<p>As explained earlier, you can create and use &#39;Pages Parts&rsquo; into any template of your 39shops theme. Suppose you created a page part called &#39;side_navigation&rsquo; and now you want to display it in your &#39;Catalog&rsquo; template. Open the &#39;Catalogue&rsquo; template and move your cursor to the HTML tag where you want to insert the page part. Use this tag: <strong>{% include &#39;side_navigation&rsquo; %}</strong>. That&rsquo;s it, the page part &#39;side_navigation&rsquo; is now included into the catalogue page and category navigation menu will be displayed in this page.</p>
+
+<blockquote>
+<p>Here is an example:</p>
+</blockquote>
+<pre class="highlight liquid"><code>&lt;html&gt;
+&lt;body&gt;
+&lt;div class="content-left"&gt;
+...
+&lt;/div&gt;
+&lt;!-- Start right side bar --&gt;
+&lt;div class="content-right"&gt;
+
+<span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="s2">"side_navigation"</span><span class="w"> </span><span class="p">%}</span>
+
+&lt;/div&gt;
+
+&lt;!-- End right side bar --&gt;
+&lt;body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>The convention to insert a Page Part into any template is :
+<strong>{% include &ldquo;name_of_ page_part&rdquo; %}</strong></p>
+
+<h2 id="3-5-rendering-39-layout-39-in-other-templates">3.5. Rendering &#39;Layout&rsquo; in other templates</h2>
+
+<p>Earlier we discussed that the &#39;Layout&rsquo; is the base template which contain common design elements to be displayed store-wide; for example, header and footer. To allow rest of the templates, use the &#39;Layout&rsquo; template, we need to put the following tag into the &#39;Layout&rsquo; template.
+<strong>{{ content_for_layout }}</strong></p>
+
+<blockquote>
+<p>Here is an example of a typical &#39;Layout&rsquo; template:</p>
+</blockquote>
+<pre class="highlight liquid"><code>&lt;html&gt;
+&lt;head&gt;
+...
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!-- Start header --&gt; 
+&lt;div class="header"&gt;
+...
+&lt;/div&gt;
+&lt;/!-- End header --&gt;
+<span class="p">{{</span><span class="w"> </span><span class="nv">content_for_layout</span><span class="w"> </span><span class="p">}}</span>
+&lt;!-- Start footer ---&gt; &lt;div class="footer"&gt;
+...
+&lt;/div&gt;
+&lt;!-- End footer--&gt;
+&lt;body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>In the example, the <em>&#39;head&rsquo;</em> section has the Stylesheet and JavaScript links. Then in the <em>&#39;body&rsquo;</em> tag, only header and footer sections are rendered. Between the header and footer, we have included <strong>{{ content_for_layout }}</strong>.
+This tag does all the job for rest of the template pages. When a template page loads, it looks for the layout and in the layout if <strong>{{ content_for_layout }}</strong>. tag is present, then the template page automatically take up the header and footer from the &#39;Layout&rsquo; and displays the rest of the content specific to that page.</p>
 
       </div>
       <div class="dark-box">

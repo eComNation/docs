@@ -12,6 +12,7 @@ includes:
   - theme_anatomy
   - working_with_39shops
   - errors
+  - tags/basic
 
 search: true
 ---

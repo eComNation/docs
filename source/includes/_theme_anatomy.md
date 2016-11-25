@@ -1,23 +1,25 @@
 # 1. The Anatomy of a Theme 
 Every 39shops theme consist of certain basic elements which work together to
 show up the online store. These elements are:
-• Templates
-• Page Parts
-• Stylesheets
-• JavaScript
-• Images
+
+* Templates
+* Page Parts
+* Stylesheets
+* JavaScript
+* Images
 
 ## 1.1. Templates
 Templates are specialized HTML pages with *.liquid extension to parse dynamic
 tags supported by 39shops. 39shops provides a set of standard templates
 based on the functions each of them perform. Here are the templates provided
 with every 39shops theme:
-• layout
-• home
-• catalogue
-• product detail
-• page
-• cart
+
+* layout
+* home
+* catalogue
+* product detail
+* page
+* cart
 
 ### 1.1.1. Layout
 The layout holds the most common elements of the website. It behaves like a
@@ -78,5 +80,7 @@ A default images folder is provided with every 39shops theme. It stores all type
 of graphics such as background images, bullets, icons, banners etc. associated
 with your theme.
 
+<aside class="notice">
 Note: The Images folder associated with your theme not store product photos or any files
 related to the content of your online store. Such files are stored in the ‘File Manager’.
+</aside>

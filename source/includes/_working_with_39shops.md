@@ -6,17 +6,13 @@ sub-menu under the Design & Navigation tab.
 
 ## 2.1. Online theme editor
 The online theme editor has following major sections:
- | 
---------------- | ------------------------------------------------------------
-Templates | Templates All liquid templates associated with your theme are available for
-editing in this section
-Page parts | Page parts By default side_nav is provided, you can add more page parts as
-needed by clicking on the add page part icon.
-Stylesheets | Stylesheets A default stylesheet default.css is available with the theme. You
-can modify this stylesheet or add more Stylesheets by clicking on
-the add new stylesheet icon.
-JavaScript | JavaScript A blank default.js is provided with the theme. You can added
-more by clicking on add new javascript icon.
+
+Name | Desciption
+---- | ----------
+Templates | All liquid templates associated with your theme are available for editing in this section
+Page parts | By default side_nav is provided, you can add more page parts as needed by clicking on the add page part icon.
+Stylesheets | A default stylesheet default.css is available with the theme. You can modify this stylesheet or add more Stylesheets by clicking on the add new stylesheet icon.
+JavaScript | A blank default.js is provided with the theme. You can added more by clicking on add new javascript icon.
 Images | Stores all graphics, background, icons etc. related to a theme
 Preferences | Stores product photo resizing preferences related to your theme
 
@@ -29,8 +25,10 @@ various theme elements quickly without going back to the main page.
 As you modify your theme elements, you can open your store url in another
 window and refresh it to view the updated changes.
 
-*Important Note:*
+<aside class="notice">
+Important Note:
 Sometimes the changes you make may not be visible instantly. It is advisable to refresh your
 browser and remove the cache if do not see the changes.
-For Windows user: press *ctrl+f5* to allow browser to bypass local cache and request the design
+For Windows user: press ctrl+f5 to allow browser to bypass local cache and request the design
 elements from the server.
+</aside>

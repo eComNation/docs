@@ -1,7 +1,6 @@
-# 3. Tags
+﻿# 3. Tags
 
-## 3.1. Tag Basics 
-39shops has two types of special operators used to render dynamic content in the HTML templates. They are **Variables** and **Blocks**.
+## 3.1. Tag Basics eComNation has two types of special operators used to render dynamic content in the HTML templates. They are **Variables** and **Blocks**.
 
 ### 3.1.1. Variables
 Variables are used to insert dynamic data like product title, product price etc.
@@ -182,4 +181,5 @@ Earlier we discussed that the 'Layout' is the base template which contain common
 ```
 
 In the example, the *'head'* section has the Stylesheet and JavaScript links. Then in the *'body'* tag, only header and footer sections are rendered. Between the header and footer, we have included **{{ content_for_layout }}**.
+
 This tag does all the job for rest of the template pages. When a template page loads, it looks for the layout and in the layout if **{{ content_for_layout }}**. tag is present, then the template page automatically take up the header and footer from the 'Layout' and displays the rest of the content specific to that page.

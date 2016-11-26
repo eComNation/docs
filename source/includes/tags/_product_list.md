@@ -65,7 +65,7 @@ Some of the above code looks familiar to us while some tags are relatively new. 
 
 ### 3.7.1 Featured Product List
 
-In addition to the product list, 39shops has a special type of product list called 'Featured Products'. If user has flagged a product 'Featured' from his store administration area, those products are displayed using this Tag.
+In addition to the product list, eComNation has a special type of product list called 'Featured Products'. If user has flagged a product 'Featured' from his store administration area, those products are displayed using this Tag.
 
 >Here is an example of featured product list block:
 

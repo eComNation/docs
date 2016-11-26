@@ -1,6 +1,6 @@
 ## 3.10. Shopping Cart
 
-With every 39shops theme, there is a default template called 'cart.liquid'. The 'cart.liquid' template is used to render the items added to shopping cart. Morover in this page user can modify quantity and proceed to checkout. Lets look at what goes into the cart.liquid template one by one.
+With every eComNation theme, there is a default template called 'cart.liquid'. The 'cart.liquid' template is used to render the items added to shopping cart. Morover in this page user can modify quantity and proceed to checkout. Lets look at what goes into the cart.liquid template one by one.
 
 All dynamic tags of shopping cart page are within the *'form'* tag which is a standard HTML tag.
 

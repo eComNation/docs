@@ -1,5 +1,5 @@
-# 2. Working with a 39shops Theme
-Every 39shops store-front comes with a pre-installed theme. The quickest way
+# 2. Working with a eComNation Theme
+Every eComNation store-front comes with a pre-installed theme. The quickest way
 to create a new theme is to modify the pre-installed theme and rename it with
 your own. To do this, log-in to your store administration and visit My Themes
 sub-menu under the Design & Navigation tab.

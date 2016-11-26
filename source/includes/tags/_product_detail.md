@@ -1,6 +1,6 @@
 ## 3.9. Product Detail
 
-39shops provides template called 'product_detail.liquid'. This template is used to render detailed product information.
+eComNation provides template called 'product_detail.liquid'. This template is used to render detailed product information.
 
 **Displaying product photos**
 
@@ -9,6 +9,7 @@ In the product detail page, one of the major elements is displaying multiple pro
 Let's begin with the code that displays multiple product thumbnails and a larger image when click on the thumb image. 
 
 >Here is the code:
+
 ```liquid
 {% for product_image in product.product_images %}
 <li>
@@ -32,6 +33,7 @@ If we further need to show even a larger version of the image, here is the code:
 Now, if you want that clickng on the big image should open the large image, you can link the big image to the large image in the following way:
 
 > Here is the code
+
 ```liquid
 <a href="{{product | product_img_url: 'large' }}">{{product | product_img_tag:'medium' }}</a>
 ```

@@ -1,8 +1,9 @@
 ## 3.8. Categories
 
-From your 39shops store administration, you can assign products to one or more categories. This allows the shopper to click on categories and get desired products quickly while they are browsing through the store front.
+From your eComNation store administration, you can assign products to one or more categories. This allows the shopper to click on categories and get desired products quickly while they are browsing through the store front.
 
 >Here is the code example that displays list of categories:
+
 ```liquid
 <ul>
 {% for category in store.categories %}
@@ -12,6 +13,7 @@ From your 39shops store administration, you can assign products to one or more c
 ```
 
 > Showing Featured Categories
+
 ```liquid
 <ul>
 {% for category in store.featured_categories %}

@@ -1,12 +1,12 @@
 ## 3.6. Navigation Menus
 
-39shops allows user to create any number of navigation menus and insert them into one or more template pages as needed.
+eComNation allows user to create any number of navigation menus and insert them into one or more template pages as needed.
 
 ### 3.6.1. Creating navigation menu
 
 To create a navigation menu, log-in to your store administration area and under the 'Design and Navigation' tab, click on 'Navigation menus' option.
 
-You will see that two navigation menu's 'Main' and 'Footer' are already created and a couple of links are also added to these. These are default navigation menus provided by 39shops and cannot be removed. For each of these navigation menus, you can add/remove links.
+You will see that two navigation menu's 'Main' and 'Footer' are already created and a couple of links are also added to these. These are default navigation menus provided by eComNation and cannot be removed. For each of these navigation menus, you can add/remove links.
 
 You can also add new navigation menus apart from main and footer by clicking on the link 'Add navigation menu' located on the top of the right side bar.
 
@@ -42,7 +42,7 @@ The second line of navigation menu tag looks familiar to us. The link tag {{ lin
 
 Finally the navigation menu tags for loop ends with {% endfor %}, which is a standard convention to end a for loop.
 
-Here is the standard code for footer main navigation and footer navigation menus which comes default with each 39shops store-front.
+Here is the standard code for footer main navigation and footer navigation menus which comes default with each eComNation store-front.
 
 > Main navigation menu
 

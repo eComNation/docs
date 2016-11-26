@@ -1,5 +1,5 @@
-# 1. The Anatomy of a Theme 
-Every 39shops theme consist of certain basic elements which work together to
+﻿# 1. The Anatomy of a Theme 
+Every eComNation theme consist of certain basic elements which work together to
 show up the online store. These elements are:
 
 * Templates
@@ -10,9 +10,9 @@ show up the online store. These elements are:
 
 ## 1.1. Templates
 Templates are specialized HTML pages with *.liquid extension to parse dynamic
-tags supported by 39shops. 39shops provides a set of standard templates
+tags supported by eComNation. eComNation provides a set of standard templates
 based on the functions each of them perform. Here are the templates provided
-with every 39shops theme:
+with every eComNation theme:
 
 * layout
 * home
@@ -67,16 +67,16 @@ change the promotional banner, you will only need to modify the page part.
 
 ## 1.3. Stylesheets
 Just like any other website, you can attach Stylesheet to your templates. In your
-39shops theme, Stylesheets are linked with the ‘Layout’ template.
+eComNation theme, Stylesheets are linked with the ‘Layout’ template.
 
 
 ## 1.4. JavaScript
 JavaScript can be also included in the same way as Stylesheets with the ‘Layout’
-template of your theme. 39Shops themes support all types of JavaScript
+template of your theme. eComNation themes support all types of JavaScript
 including Jquery.
 
 ## 1.5. Images
-A default images folder is provided with every 39shops theme. It stores all types
+A default images folder is provided with every eComNation theme. It stores all types
 of graphics such as background images, bullets, icons, banners etc. associated
 with your theme.
 

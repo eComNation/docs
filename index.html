@@ -120,7 +120,7 @@
         
           <h1 id="1-the-anatomy-of-a-theme">1. The Anatomy of a Theme</h1>
 
-<p>Every 39shops theme consist of certain basic elements which work together to
+<p>Every eComNation theme consist of certain basic elements which work together to
 show up the online store. These elements are:</p>
 
 <ul>
@@ -134,9 +134,9 @@ show up the online store. These elements are:</p>
 <h2 id="1-1-templates">1.1. Templates</h2>
 
 <p>Templates are specialized HTML pages with *.liquid extension to parse dynamic
-tags supported by 39shops. 39shops provides a set of standard templates
+tags supported by eComNation. eComNation provides a set of standard templates
 based on the functions each of them perform. Here are the templates provided
-with every 39shops theme:</p>
+with every eComNation theme:</p>
 
 <ul>
 <li>layout</li>
@@ -199,17 +199,17 @@ change the promotional banner, you will only need to modify the page part.</p>
 <h2 id="1-3-stylesheets">1.3. Stylesheets</h2>
 
 <p>Just like any other website, you can attach Stylesheet to your templates. In your
-39shops theme, Stylesheets are linked with the ‘Layout’ template.</p>
+eComNation theme, Stylesheets are linked with the ‘Layout’ template.</p>
 
 <h2 id="1-4-javascript">1.4. JavaScript</h2>
 
 <p>JavaScript can be also included in the same way as Stylesheets with the ‘Layout’
-template of your theme. 39Shops themes support all types of JavaScript
+template of your theme. eComNation themes support all types of JavaScript
 including Jquery.</p>
 
 <h2 id="1-5-images">1.5. Images</h2>
 
-<p>A default images folder is provided with every 39shops theme. It stores all types
+<p>A default images folder is provided with every eComNation theme. It stores all types
 of graphics such as background images, bullets, icons, banners etc. associated
 with your theme.</p>
 
@@ -218,9 +218,9 @@ Note: The Images folder associated with your theme not store product photos or a
 related to the content of your online store. Such files are stored in the ‘File Manager’.
 </aside>
 
-          <h1 id="2-working-with-a-39shops-theme">2. Working with a 39shops Theme</h1>
+          <h1 id="2-working-with-a-ecomnation-theme">2. Working with a eComNation Theme</h1>
 
-<p>Every 39shops store-front comes with a pre-installed theme. The quickest way
+<p>Every eComNation store-front comes with a pre-installed theme. The quickest way
 to create a new theme is to modify the pre-installed theme and rename it with
 your own. To do this, log-in to your store administration and visit My Themes
 sub-menu under the Design &amp; Navigation tab.</p>
@@ -282,9 +282,7 @@ elements from the server.
 
           <h1 id="3-tags">3. Tags</h1>
 
-<h2 id="3-1-tag-basics">3.1. Tag Basics</h2>
-
-<p>39shops has two types of special operators used to render dynamic content in the HTML templates. They are <strong>Variables</strong> and <strong>Blocks</strong>.</p>
+<h2 id="3-1-tag-basics-ecomnation-has-two-types-of-special-operators-used-to-render-dynamic-content-in-the-html-templates-they-are-variables-and-blocks">3.1. Tag Basics eComNation has two types of special operators used to render dynamic content in the HTML templates. They are <strong>Variables</strong> and <strong>Blocks</strong>.</h2>
 
 <h3 id="3-1-1-variables">3.1.1. Variables</h3>
 
@@ -459,18 +457,19 @@ Note: Block always begins and ends with a single curly bracket and a percentage 
 &lt;/html&gt;
 </code></pre>
 
-<p>In the example, the <em>&#39;head&rsquo;</em> section has the Stylesheet and JavaScript links. Then in the <em>&#39;body&rsquo;</em> tag, only header and footer sections are rendered. Between the header and footer, we have included <strong>{{ content_for_layout }}</strong>.
-This tag does all the job for rest of the template pages. When a template page loads, it looks for the layout and in the layout if <strong>{{ content_for_layout }}</strong>. tag is present, then the template page automatically take up the header and footer from the &#39;Layout&rsquo; and displays the rest of the content specific to that page.</p>
+<p>In the example, the <em>&#39;head&rsquo;</em> section has the Stylesheet and JavaScript links. Then in the <em>&#39;body&rsquo;</em> tag, only header and footer sections are rendered. Between the header and footer, we have included <strong>{{ content_for_layout }}</strong>.</p>
+
+<p>This tag does all the job for rest of the template pages. When a template page loads, it looks for the layout and in the layout if <strong>{{ content_for_layout }}</strong>. tag is present, then the template page automatically take up the header and footer from the &#39;Layout&rsquo; and displays the rest of the content specific to that page.</p>
 
           <h2 id="3-6-navigation-menus">3.6. Navigation Menus</h2>
 
-<p>39shops allows user to create any number of navigation menus and insert them into one or more template pages as needed.</p>
+<p>eComNation allows user to create any number of navigation menus and insert them into one or more template pages as needed.</p>
 
 <h3 id="3-6-1-creating-navigation-menu">3.6.1. Creating navigation menu</h3>
 
 <p>To create a navigation menu, log-in to your store administration area and under the &lsquo;Design and Navigation&rsquo; tab, click on &#39;Navigation menus&rsquo; option.</p>
 
-<p>You will see that two navigation menu&rsquo;s &#39;Main&rsquo; and &#39;Footer&rsquo; are already created and a couple of links are also added to these. These are default navigation menus provided by 39shops and cannot be removed. For each of these navigation menus, you can add/remove links.</p>
+<p>You will see that two navigation menu&rsquo;s &#39;Main&rsquo; and &#39;Footer&rsquo; are already created and a couple of links are also added to these. These are default navigation menus provided by eComNation and cannot be removed. For each of these navigation menus, you can add/remove links.</p>
 
 <p>You can also add new navigation menus apart from main and footer by clicking on the link &#39;Add navigation menu&rsquo; located on the top of the right side bar.</p>
 
@@ -505,7 +504,7 @@ argument &#39;main_navigation&rsquo; is the name of the navigation menu availabl
 
 <p>Finally the navigation menu tags for loop ends with {% endfor %}, which is a standard convention to end a for loop.</p>
 
-<p>Here is the standard code for footer main navigation and footer navigation menus which comes default with each 39shops store-front.</p>
+<p>Here is the standard code for footer main navigation and footer navigation menus which comes default with each eComNation store-front.</p>
 
 <blockquote>
 <p>Main navigation menu</p>
@@ -590,7 +589,7 @@ argument &#39;main_navigation&rsquo; is the name of the navigation menu availabl
 
 <h3 id="3-7-1-featured-product-list">3.7.1 Featured Product List</h3>
 
-<p>In addition to the product list, 39shops has a special type of product list called &#39;Featured Products&rsquo;. If user has flagged a product &#39;Featured&rsquo; from his store administration area, those products are displayed using this Tag.</p>
+<p>In addition to the product list, eComNation has a special type of product list called &#39;Featured Products&rsquo;. If user has flagged a product &#39;Featured&rsquo; from his store administration area, those products are displayed using this Tag.</p>
 
 <blockquote>
 <p>Here is an example of featured product list block:</p>
@@ -626,27 +625,27 @@ argument &#39;main_navigation&rsquo; is the name of the navigation menu availabl
 
           <h2 id="3-8-categories">3.8. Categories</h2>
 
-<p>From your 39shops store administration, you can assign products to one or more categories. This allows the shopper to click on categories and get desired products quickly while they are browsing through the store front.</p>
+<p>From your eComNation store administration, you can assign products to one or more categories. This allows the shopper to click on categories and get desired products quickly while they are browsing through the store front.</p>
 
 <blockquote>
-<p>Here is the code example that displays list of categories:
-<code class="prettyprint">liquid
-&lt;ul&gt;
-{% for category in store.categories %}
-&lt;li&gt;&lt;a href=&quot;{{ category.url }}&quot;&gt;{{ category.name }}&lt;/a&gt;&lt;/li&gt;
-{% endfor %}
-&lt;/ul&gt;
-</code></p>
-
-<p>Showing Featured Categories
-<code class="prettyprint">liquid
-&lt;ul&gt;
-{% for category in store.featured_categories %}
-&lt;li&gt;&lt;a href=&quot;{{ category.url }}&quot;&gt;{{ category.name }}&lt;/a&gt;&lt;/li&gt;
-{% endfor %}
-&lt;/ul&gt;
-</code></p>
+<p>Here is the code example that displays list of categories:</p>
 </blockquote>
+<pre class="highlight liquid"><code>&lt;ul&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>category<span class="w"> </span>in<span class="w"> </span>store.categories<span class="w"> </span><span class="p">%}</span>
+&lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/ul&gt;
+</code></pre>
+
+<blockquote>
+<p>Showing Featured Categories</p>
+</blockquote>
+<pre class="highlight liquid"><code>&lt;ul&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>category<span class="w"> </span>in<span class="w"> </span>store.featured_categories<span class="w"> </span><span class="p">%}</span>
+&lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/ul&gt;
+</code></pre>
 
 <p><strong>Categories link with active category</strong></p>
 
@@ -666,7 +665,7 @@ argument &#39;main_navigation&rsquo; is the name of the navigation menu availabl
 
           <h2 id="3-9-product-detail">3.9. Product Detail</h2>
 
-<p>39shops provides template called &lsquo;product_detail.liquid&rsquo;. This template is used to render detailed product information.</p>
+<p>eComNation provides template called &lsquo;product_detail.liquid&rsquo;. This template is used to render detailed product information.</p>
 
 <p><strong>Displaying product photos</strong></p>
 
@@ -675,16 +674,15 @@ argument &#39;main_navigation&rsquo; is the name of the navigation menu availabl
 <p>Let&rsquo;s begin with the code that displays multiple product thumbnails and a larger image when click on the thumb image. </p>
 
 <blockquote>
-<p>Here is the code:
-<code class="prettyprint">liquid
-{% for product_image in product.product_images %}
-&lt;li&gt;
-&lt;a href=&quot;{{ product_image | img_url: &#39;medium&#39;}}&quot;&gt;
-{{ product_image | images_tag: &#39;thumb&#39;}}&lt;/a&gt;
-&lt;/li&gt;
-{% endfor %}
-</code></p>
+<p>Here is the code:</p>
 </blockquote>
+<pre class="highlight liquid"><code><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>product_image<span class="w"> </span>in<span class="w"> </span>product.product_images<span class="w"> </span><span class="p">%}</span>
+&lt;li&gt;
+&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">product_image</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">img_url</span><span class="p">:</span><span class="w"> </span><span class="s1">'medium'</span><span class="p">}}</span>"&gt;
+<span class="p">{{</span><span class="w"> </span><span class="nv">product_image</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">images_tag</span><span class="p">:</span><span class="w"> </span><span class="s1">'thumb'</span><span class="p">}}</span>&lt;/a&gt;
+&lt;/li&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+</code></pre>
 
 <p>Next, we always need to display a default big image of the product. Here is the code which does the job:</p>
 
@@ -697,11 +695,10 @@ argument &#39;main_navigation&rsquo; is the name of the navigation menu availabl
 <p>Now, if you want that clickng on the big image should open the large image, you can link the big image to the large image in the following way:</p>
 
 <blockquote>
-<p>Here is the code
-<code class="prettyprint">liquid
-&lt;a href=&quot;{{product | product_img_url: &#39;large&#39; }}&quot;&gt;{{product | product_img_tag:&#39;medium&#39; }}&lt;/a&gt;
-</code></p>
+<p>Here is the code</p>
 </blockquote>
+<pre class="highlight liquid"><code>&lt;a href="<span class="p">{{</span><span class="nv">product</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">product_img_url</span><span class="p">:</span><span class="w"> </span><span class="s1">'large'</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="nv">product</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">product_img_tag</span><span class="p">:</span><span class="s1">'medium'</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;
+</code></pre>
 
 <aside class="notice">
 Note: You can use a variety of Javascript and Jquery functions to display product images innovatively in the product detail page. Refer to our public themes to see example usage.
@@ -731,7 +728,7 @@ Note: You can use a variety of Javascript and Jquery functions to display produc
 
           <h2 id="3-10-shopping-cart">3.10. Shopping Cart</h2>
 
-<p>With every 39shops theme, there is a default template called &lsquo;cart.liquid&rsquo;. The &#39;cart.liquid&rsquo; template is used to render the items added to shopping cart. Morover in this page user can modify quantity and proceed to checkout. Lets look at what goes into the cart.liquid template one by one.</p>
+<p>With every eComNation theme, there is a default template called &lsquo;cart.liquid&rsquo;. The &#39;cart.liquid&rsquo; template is used to render the items added to shopping cart. Morover in this page user can modify quantity and proceed to checkout. Lets look at what goes into the cart.liquid template one by one.</p>
 
 <p>All dynamic tags of shopping cart page are within the <em>&#39;form&rsquo;</em> tag which is a standard HTML tag.</p>
 
@@ -788,19 +785,24 @@ id="item_check_<span class="p">{{</span><span class="w"> </span><span class="nv"
 
 <p>In the above mentioned code, we have rendered all of the elements related to a product (which is added to shopping cart) in table column <em>&#39;td&rsquo;</em>. This five columns will be loop for every row <em>&#39;tr&rsquo;</em>.</p>
 
+<blockquote>
 <p>Here is an explanation of these tags:</p>
+</blockquote>
+<pre class="highlight liquid"><code>Product name with link to product detail page
+&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">product</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt; <span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;
 
-<p><strong><a href="{{ item.product.url }}"> {{ item.name }}</a></strong>   Product name with link to product detail page</p>
+Input field that accepts quantity for each item 
+&lt;input type="text" value="<span class="p">{{</span><span class="nv">item</span><span class="p">.</span><span class="nv">quantity</span><span class="w"> </span><span class="p">}}</span>"   name="item_quantity_<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">id</span><span class="w"> </span><span class="p">}}</span>" id="item_quantity_<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">id</span><span class="w"> </span><span class="p">}}</span>" /&gt;
 
-<p><strong><input type="text" value="{{item.quantity }}" name="item_quantity_{{ item.id }}" id="item_quantity_{{ item.id }}" /></strong> Input field that accepts quantity for each item</p>
+Unit rate of each item
+<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">unit_price</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">money</span><span class="p">:</span><span class="w"> </span>store<span class="w"> </span><span class="p">}}</span>
 
-<p><strong>{{ item.unit_price | money: store }}</strong>    Unit rate of each item</p>
+Unit rate multiplied by quantity entered i.e. today amount for each item
+<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">price</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">money</span><span class="p">:</span><span class="w"> </span>store<span class="w"> </span><span class="p">}}</span>
 
-<p><strong>{{ item.price | money: store }}</strong> Unit rate multiplied by quantity
-    entered i.e. today amount for each
-    item</p>
-
-<p><strong><input type="checkbox" value="true" name="item_check_{{ item.id }}" id="item_check_{{ item.id }}"></strong>  Check box associated with each item to remove item from cart</p>
+Check box associated with each item to remove item from cart
+&lt;input type="checkbox" value="true" name="item_check_<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">id</span><span class="w"> </span><span class="p">}}</span>" id="item_check_<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">id</span><span class="w"> </span><span class="p">}}</span>"&gt;
+</code></pre>
 
 <blockquote>
 <p>Finally, we need the action buttons which will allow users to either update cart, checkout or continue shopping.</p>
@@ -835,13 +837,13 @@ Note: Usually the shopping cart header is included in the 'Layout&rsquo; templat
 <p>The content pages added by user from store administration through the &lsquo;Pages&rsquo; section is rendered in the template called &#39;page.liquid&rsquo;.</p>
 
 <blockquote>
-<p>Here is the code which displayed the page title and content of a page.
-<code class="prettyprint">liquid
-&lt;h1&gt;{{ page.title }}&lt;/h1&gt;
-&lt;p&gt;{{ page.body }} &lt;/p&gt;
-</code>
-The tags are self-explanatory.</p>
+<p>Here is the code which displayed the page title and content of a page.</p>
 </blockquote>
+<pre class="highlight liquid"><code>&lt;h1&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/h1&gt;
+&lt;p&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">body</span><span class="w"> </span><span class="p">}}</span> &lt;/p&gt;
+</code></pre>
+
+<p>The tags are self-explanatory.</p>
 
       </div>
       <div class="dark-box">

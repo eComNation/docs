@@ -58,20 +58,24 @@ id="item_check_{{ item.id }}"></td>
 
 In the above mentioned code, we have rendered all of the elements related to a product (which is added to shopping cart) in table column *'td'*. This five columns will be loop for every row *'tr'*.
 
-Here is an explanation of these tags:
+> Here is an explanation of these tags:
 
-**<a href="{{ item.product.url }}"> {{ item.name }}</a>**	Product name with link to product detail page
+```liquid
+Product name with link to product detail page
+<a href="{{ item.product.url }}"> {{ item.name }}</a>
+
+Input field that accepts quantity for each item	
+<input type="text" value="{{item.quantity }}"	name="item_quantity_{{ item.id }}" id="item_quantity_{{ item.id }}" />
+
+Unit rate of each item
+{{ item.unit_price | money: store }}
 	
-**<input type="text" value="{{item.quantity }}"	name="item_quantity_{{ item.id }}" id="item_quantity_{{ item.id }}" />** Input field that accepts quantity for each item
+Unit rate multiplied by quantity entered i.e. today amount for each item
+{{ item.price | money: store }}
 	
-	
-**{{ item.unit_price | money: store }}**	Unit rate of each item
-	
-**{{ item.price | money: store }}**	Unit rate multiplied by quantity
-	entered i.e. today amount for each
-	item
-	
-**<input type="checkbox" value="true" name="item_check_{{ item.id }}" id="item_check_{{ item.id }}">**	Check box associated with each item to remove item from cart
+Check box associated with each item to remove item from cart
+<input type="checkbox" value="true" name="item_check_{{ item.id }}" id="item_check_{{ item.id }}">
+```
 	
 >Finally, we need the action buttons which will allow users to either update cart, checkout or continue shopping.
 

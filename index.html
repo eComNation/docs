@@ -117,172 +117,7 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id="authentication">Authentication</h1>
-
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight liquid"><code><span class="p">{{</span><span class="nv">product</span><span class="p">.</span><span class="nv">name</span><span class="p">}}</span>
-
-<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>product<span class="w"> </span>in<span class="w"> </span>collection.products<span class="w"> </span><span class="p">%}</span>
-  <span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
-<pre class="highlight javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
-
-<blockquote>
-<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code class="prettyprint">Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-<h1 id="kittens">Kittens</h1>
-
-<h2 id="get-all-kittens">Get All Kittens</h2>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre>
-<pre class="highlight shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
-<pre class="highlight javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
-
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-
-<p>This endpoint retrieves all kittens.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET http://example.com/api/kittens</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-<h2 id="get-a-specific-kitten">Get a Specific Kitten</h2>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
-<pre class="highlight javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can&rsquo;t use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET http://example.com/kittens/&lt;ID&gt;</code></p>
-
-<h3 id="url-parameters">URL Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-
+        
           <h1 id="1-the-anatomy-of-a-theme">1. The Anatomy of a Theme</h1>
 
 <p>Every 39shops theme consist of certain basic elements which work together to
@@ -444,60 +279,6 @@ browser and remove the cache if do not see the changes.
 For Windows user: press ctrl+f5 to allow browser to bypass local cache and request the design
 elements from the server.
 </aside>
-
-          <h1 id="errors">Errors</h1>
-
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized &ndash; Your API key is wrong</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone &ndash; The kitten requested has been removed from our servers</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&rsquo;m a teapot</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
-</tr>
-</tbody></table>
 
           <h1 id="3-tags">3. Tags</h1>
 
@@ -680,6 +461,387 @@ Note: Block always begins and ends with a single curly bracket and a percentage 
 
 <p>In the example, the <em>&#39;head&rsquo;</em> section has the Stylesheet and JavaScript links. Then in the <em>&#39;body&rsquo;</em> tag, only header and footer sections are rendered. Between the header and footer, we have included <strong>{{ content_for_layout }}</strong>.
 This tag does all the job for rest of the template pages. When a template page loads, it looks for the layout and in the layout if <strong>{{ content_for_layout }}</strong>. tag is present, then the template page automatically take up the header and footer from the &#39;Layout&rsquo; and displays the rest of the content specific to that page.</p>
+
+          <h2 id="3-6-navigation-menus">3.6. Navigation Menus</h2>
+
+<p>39shops allows user to create any number of navigation menus and insert them into one or more template pages as needed.</p>
+
+<h3 id="3-6-1-creating-navigation-menu">3.6.1. Creating navigation menu</h3>
+
+<p>To create a navigation menu, log-in to your store administration area and under the &lsquo;Design and Navigation&rsquo; tab, click on &#39;Navigation menus&rsquo; option.</p>
+
+<p>You will see that two navigation menu&rsquo;s &#39;Main&rsquo; and &#39;Footer&rsquo; are already created and a couple of links are also added to these. These are default navigation menus provided by 39shops and cannot be removed. For each of these navigation menus, you can add/remove links.</p>
+
+<p>You can also add new navigation menus apart from main and footer by clicking on the link &#39;Add navigation menu&rsquo; located on the top of the right side bar.</p>
+
+<h3 id="3-6-2-navigation-menu-tag">3.6.2 Navigation menu Tag</h3>
+
+<p>The navigation menu that you create can be easily added to any template pages using the navigation menu title.</p>
+
+<blockquote>
+<p>Here is the code:</p>
+</blockquote>
+<pre class="highlight liquid"><code><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>link<span class="w"> </span>in<span class="w"> </span>store.main_navigation_links<span class="w"> </span><span class="p">%}</span>
+&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>" target="<span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">url_target</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+</code></pre>
+
+<p>In the first line, we have used the &#39;for&rsquo; loop <strong>{% for link in &hellip;..%}</strong> to render each link added to a navigation menu. But there is more to this tag, lets take a look at the tag closely:</p>
+
+<p><strong>{% for link in store.main_navigation_links %}</strong></p>
+
+<p>Apart from the standard &#39;for&rsquo; loop convention, we have the store.main_navigation_link argument in which really does the trick. In that
+argument &#39;main_navigation&rsquo; is the name of the navigation menu available in the &#39;Navigation menus&rsquo; section of your store administration.</p>
+
+<p>Likewise, suppose user has added a navigation menu called &#39;Top Categories&rsquo;, then the navigation menu tag will be something like this :</p>
+
+<p><strong>{% for link in store.top_categories_link %}</strong></p>
+
+<p>Notice how we used &#39;top_categories&rsquo; as the argument instead of</p>
+
+<p>&#39;main_navigation&rsquo;.</p>
+
+<p>The second line of navigation menu tag looks familiar to us. The link tag {{ link.url }} links to the navigation menu item configured while adding the link, target tag {{ link.url_target }} takes the target (open in same browser window or open in a new browser window) selected while adding the link and finally {{ link.title }} tag displays the name of the link saved while adding the link to navigation menu.</p>
+
+<p>Finally the navigation menu tags for loop ends with {% endfor %}, which is a standard convention to end a for loop.</p>
+
+<p>Here is the standard code for footer main navigation and footer navigation menus which comes default with each 39shops store-front.</p>
+
+<blockquote>
+<p>Main navigation menu</p>
+</blockquote>
+<pre class="highlight liquid"><code><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>link<span class="w"> </span>in<span class="w"> </span>store.main_navigation_links<span class="w"> </span><span class="p">%}</span>
+&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>" target="<span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">url_target</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+</code></pre>
+
+<blockquote>
+<p>Footer navigation menu</p>
+</blockquote>
+<pre class="highlight liquid"><code><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>link<span class="w"> </span>in<span class="w"> </span>store.footer_navigation_links<span class="w"> </span><span class="p">%}</span>
+&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>" target="<span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">url_target</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">link</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+</code></pre>
+
+          <h2 id="3-7-product-list">3.7. Product List</h2>
+
+<p>Product lists are displayed using &lsquo;blocks&rsquo;. The product listing block is used in &#39;catalogue.liquid&rsquo; template.</p>
+
+<blockquote>
+<p>Here is an example of the product list block:</p>
+</blockquote>
+<pre class="highlight liquid"><code>&lt;html&gt;
+&lt;head&gt;
+...
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Products&lt;/h1&gt; &lt;div class="item"&gt; &lt;ul&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>product<span class="w"> </span>in<span class="w"> </span>store.paginated_products<span class="w"> </span><span class="p">%}</span>
+&lt;li&gt;
+&lt;h2 class="title"&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/h2&gt; &lt;div class="photo"&gt; &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="w"> </span><span class="p">|</span><span class="nf">product_img_tag</span><span class="w">
+</span><span class="p">}}</span>&lt;/a&gt; &lt;/div&gt;
+&lt;p class="price"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">price</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">money</span><span class="w"> </span>:<span class="w"> </span>store<span class="w"> </span><span class="p">}}</span>&lt;/p&gt;
+&lt;/li&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div style="clear"&gt;&lt;/div&gt;
+<span class="p">{{</span><span class="w"> </span><span class="nv">store</span><span class="p">.</span><span class="nv">paginated_products</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">will_paginate_liquid</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prev"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Next"</span><span class="w"> </span><span class="p">}}</span> &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Some of the above code looks familiar to us while some tags are relatively new. Let&rsquo;s understand what each of these tags do:</p>
+
+<p><strong>{% for product in</strong>   Begins the product block</p>
+
+<p><strong>store.paginated_products %}{{ product.url }}</strong>    Provides hyperlink to the product detail page.</p>
+
+<p><strong>{{ product.name }}</strong>  Displays the product title</p>
+
+<p><strong>{{ product | product_img_tag }}</strong> Displays the product image (small
+    size).
+    There are two parts of this tag
+    separated by a vertical line. The first
+    part &#39;product&rsquo; tells the system to
+    identify the product and the second
+    tag after the vertical line
+    &ldquo;product_image_tag&rdquo; finds out the
+    corresponding image path of the
+    product.</p>
+
+<p><strong>{{ product.price | money : store }}</strong> Displays the product price.
+    There are two parts of this tag
+    separated by a vertical line. The first
+    part &#39;product.price&rsquo; shows the actual
+    price of the product while the second
+    part after the vertical line &#39;money&rsquo; is a
+    special operator to covert any number
+    into currency format.</p>
+
+<p><strong>{% endfor %}</strong>    Ends the loop</p>
+
+<p><strong>{{ store.paginated_products |</strong>   Displays the pagination of the product </p>
+
+<p><strong>will_paginate_liquid: &ldquo;Prev&rdquo;, &ldquo;Next&rdquo; }}</strong> list.
+    In this tag, the text written inside the
+    double quotes i.e. &#39;Prev&rsquo; , &#39;Next&rsquo; can
+    be changed to any text that you want
+    to show.</p>
+
+<h3 id="3-7-1-featured-product-list">3.7.1 Featured Product List</h3>
+
+<p>In addition to the product list, 39shops has a special type of product list called &#39;Featured Products&rsquo;. If user has flagged a product &#39;Featured&rsquo; from his store administration area, those products are displayed using this Tag.</p>
+
+<blockquote>
+<p>Here is an example of featured product list block:</p>
+</blockquote>
+<pre class="highlight liquid"><code>&lt;html&gt;
+&lt;head&gt;
+...
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Products&lt;/h1&gt;
+&lt;div class="item"&gt;
+&lt;ul&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>product<span class="w"> </span>in<span class="w"> </span>store.featured_products<span class="w"> </span><span class="p">%}</span>
+&lt;li&gt;
+&lt;h2 class="title"&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">name</span><span class="err">
+</span><span class="p">}}</span>&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="photo"&gt; &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="w"> </span><span class="p">|</span><span class="err">
+</span><span class="nf">product_img_tag</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt; &lt;/div&gt;
+&lt;p class="price"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">price</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">money</span><span class="w"> </span>:<span class="w"> </span>store<span class="w"> </span><span class="p">}}</span>&lt;/p&gt;
+&lt;/li&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div style="clear"&gt;&lt;/div&gt;
+<span class="p">{{</span><span class="w"> </span><span class="nv">store</span><span class="p">.</span><span class="nv">paginated_products</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">will_paginate_liquid</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prev"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Next"</span><span class="w"> </span><span class="p">}}</span>
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p><strong>Explanation</strong></p>
+
+<p>The only difference between a normal product list and a featured product list is the first line in that tag where we have specified &#39;store.featured_products&rsquo; instead of &#39;store.paginated_products&rsquo;</p>
+
+          <h2 id="3-8-categories">3.8. Categories</h2>
+
+<p>From your 39shops store administration, you can assign products to one or more categories. This allows the shopper to click on categories and get desired products quickly while they are browsing through the store front.</p>
+
+<blockquote>
+<p>Here is the code example that displays list of categories:
+<code class="prettyprint">liquid
+&lt;ul&gt;
+{% for category in store.categories %}
+&lt;li&gt;&lt;a href=&quot;{{ category.url }}&quot;&gt;{{ category.name }}&lt;/a&gt;&lt;/li&gt;
+{% endfor %}
+&lt;/ul&gt;
+</code></p>
+
+<p>Showing Featured Categories
+<code class="prettyprint">liquid
+&lt;ul&gt;
+{% for category in store.featured_categories %}
+&lt;li&gt;&lt;a href=&quot;{{ category.url }}&quot;&gt;{{ category.name }}&lt;/a&gt;&lt;/li&gt;
+{% endfor %}
+&lt;/ul&gt;
+</code></p>
+</blockquote>
+
+<p><strong>Categories link with active category</strong></p>
+
+<p>In order to provide a better user experience, sometimes active category needs to be highlight using a difference CSS. In the following example, we are using a special &lsquo;for loop&rsquo; to display an active category. In this example, we are assuming that a css class called &#39;active&rsquo; is already available.</p>
+<pre class="highlight liquid"><code>&lt;ul&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>category<span class="w"> </span>in<span class="w"> </span>store.categories<span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">store</span><span class="p">.</span><span class="nv">active_category</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">category</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">active_class</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"active"</span><span class="w"> </span><span class="p">%}</span> <span class="p">{%</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">active_class</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="p">%}</span> <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+&lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>" class=<span class="p">{{</span><span class="w"> </span><span class="nv">active_class</span><span class="w"> </span><span class="p">}}</span>&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">.</span><span class="nv">name</span><span class="err">
+</span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/ul&gt;
+</code></pre>
+
+<p>In this example, we are using the already known for loop for categories. However, the interesting part of the code begins from second line. Here we are using an {%if&hellip;%} {%else%} {%endif %} block to tell the system which class to apply when a particular category is active.</p>
+
+          <h2 id="3-9-product-detail">3.9. Product Detail</h2>
+
+<p>39shops provides template called &lsquo;product_detail.liquid&rsquo;. This template is used to render detailed product information.</p>
+
+<p><strong>Displaying product photos</strong></p>
+
+<p>In the product detail page, one of the major elements is displaying multiple product images and also allowing user to see a bigger product image.</p>
+
+<p>Let&rsquo;s begin with the code that displays multiple product thumbnails and a larger image when click on the thumb image. </p>
+
+<blockquote>
+<p>Here is the code:
+<code class="prettyprint">liquid
+{% for product_image in product.product_images %}
+&lt;li&gt;
+&lt;a href=&quot;{{ product_image | img_url: &#39;medium&#39;}}&quot;&gt;
+{{ product_image | images_tag: &#39;thumb&#39;}}&lt;/a&gt;
+&lt;/li&gt;
+{% endfor %}
+</code></p>
+</blockquote>
+
+<p>Next, we always need to display a default big image of the product. Here is the code which does the job:</p>
+
+<p><strong>{{product | product_img_tag: &#39;medium&rsquo; }}</strong></p>
+
+<p>If we further need to show even a larger version of the image, here is the code:</p>
+
+<p><strong>{{product | product_img_tag: &#39;large&rsquo; }}</strong></p>
+
+<p>Now, if you want that clickng on the big image should open the large image, you can link the big image to the large image in the following way:</p>
+
+<blockquote>
+<p>Here is the code
+<code class="prettyprint">liquid
+&lt;a href=&quot;{{product | product_img_url: &#39;large&#39; }}&quot;&gt;{{product | product_img_tag:&#39;medium&#39; }}&lt;/a&gt;
+</code></p>
+</blockquote>
+
+<aside class="notice">
+Note: You can use a variety of Javascript and Jquery functions to display product images innovatively in the product detail page. Refer to our public themes to see example usage.
+</aside>
+
+<p>Displaying product information</p>
+
+<p>Here are the simple tags you can use to show detailed product information:</p>
+
+<p>{{ product.name }}  Show product title
+{{ product.description }}   Show detailed description
+{{ product.price | money: store }}  Show product price</p>
+
+<p><strong>Adding product to cart</strong></p>
+
+<blockquote>
+<p>Here is the code which allows user to specify quantity and add the product to cart:</p>
+</blockquote>
+<pre class="highlight liquid"><code>&lt;form method="post" action="/cart/add" &gt;
+&lt;input type="hidden" id="product_id" name="product_id" value="<span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">id</span><span class="err">
+</span><span class="p">}}</span>" /&gt;
+&lt;input type="text" value="1" size="2" name="quantity" id="quantity" class="textinput"&gt;
+&lt;input type="submit" name="button" id="button" value="Add to cart" /&gt; &lt;/form&gt;
+</code></pre>
+
+<p>In the above code, since we are collecting user data, we certainly need to have a <em>&#39;form&rsquo;</em> tag with a &#39;post&rsquo; method.</p>
+
+          <h2 id="3-10-shopping-cart">3.10. Shopping Cart</h2>
+
+<p>With every 39shops theme, there is a default template called &lsquo;cart.liquid&rsquo;. The &#39;cart.liquid&rsquo; template is used to render the items added to shopping cart. Morover in this page user can modify quantity and proceed to checkout. Lets look at what goes into the cart.liquid template one by one.</p>
+
+<p>All dynamic tags of shopping cart page are within the <em>&#39;form&rsquo;</em> tag which is a standard HTML tag.</p>
+
+<blockquote>
+<p>Here is form action:</p>
+</blockquote>
+<pre class="highlight liquid"><code>&lt;form action="/cart/update" method="post" id="cart"&gt;
+---- shopping cart dynamic tags in this area ----
+&lt;/form&gt;
+</code></pre>
+
+<p>As you can see, the <em>&#39;form&rsquo;</em> tag does nothing special except accepting the &#39;post&rsquo; method based on the &#39;cart id&rsquo;. This is a standard code and it is a pre-requisite for the shopping cart page to function properly.</p>
+
+<p>Now, let&rsquo;s take a look at how we can render the items added to the shopping cart.</p>
+
+<p>Since there can be multiple items added to a cart, we will use the &#39;for loop&rsquo; to render to loop items added to the cart and render in our view:</p>
+<pre class="highlight liquid"><code>&lt;table&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>item<span class="w"> </span>in<span class="w"> </span>cart.items<span class="w"> </span><span class="p">%}</span>
+&lt;tr&gt;
+&lt;!-- loop each item in a row --&gt;
+&lt;/tr&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/table&gt;
+</code></pre>
+
+<aside class="notice">
+Note:- For the sake of this example, we have used table structure, but you can also used 'div&rsquo; based structure for your design.
+</aside>
+
+<p>Within this for loop, for each item that is rendered, we need to display following elements:</p>
+
+<ol>
+<li>Item name and link to product description</li>
+<li>Unit price of each item</li>
+<li>Quantity input so that user can modify quantity</li>
+<li>Amount for that items i.e. quantity multiplied by unit price</li>
+<li>Check box to remove one or more items</li>
+</ol>
+
+<blockquote>
+<p>Let&rsquo;s see how each of these elements is rendered using our tags:</p>
+</blockquote>
+<pre class="highlight liquid"><code><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>item<span class="w"> </span>in<span class="w"> </span>cart.items<span class="w"> </span><span class="p">%}</span>
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">product</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;input type="text" size="2" value="<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">quantity</span><span class="w"> </span><span class="p">}}</span>" name="item_quantity_<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">id</span><span class="w"> </span><span class="p">}}</span>" id="item_quantity_<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">id</span><span class="w"> </span><span class="p">}}</span>" /&gt;&lt;/td&gt;
+&lt;td&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">unit_price</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">money</span><span class="p">:</span><span class="w"> </span>store<span class="w"> </span><span class="p">}}</span>&lt;/td&gt;
+&lt;td&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">price</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">money</span><span class="p">:</span><span class="w"> </span>store<span class="w"> </span><span class="p">}}</span>&lt;/td&gt;
+&lt;td&gt;&lt;input type="checkbox" value="true" name="item_check_<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">id</span><span class="w"> </span><span class="p">}}</span>"
+id="item_check_<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">id</span><span class="w"> </span><span class="p">}}</span>"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+</code></pre>
+
+<p>In the above mentioned code, we have rendered all of the elements related to a product (which is added to shopping cart) in table column <em>&#39;td&rsquo;</em>. This five columns will be loop for every row <em>&#39;tr&rsquo;</em>.</p>
+
+<p>Here is an explanation of these tags:</p>
+
+<p><strong><a href="{{ item.product.url }}"> {{ item.name }}</a></strong>   Product name with link to product detail page</p>
+
+<p><strong><input type="text" value="{{item.quantity }}" name="item_quantity_{{ item.id }}" id="item_quantity_{{ item.id }}" /></strong> Input field that accepts quantity for each item</p>
+
+<p><strong>{{ item.unit_price | money: store }}</strong>    Unit rate of each item</p>
+
+<p><strong>{{ item.price | money: store }}</strong> Unit rate multiplied by quantity
+    entered i.e. today amount for each
+    item</p>
+
+<p><strong><input type="checkbox" value="true" name="item_check_{{ item.id }}" id="item_check_{{ item.id }}"></strong>  Check box associated with each item to remove item from cart</p>
+
+<blockquote>
+<p>Finally, we need the action buttons which will allow users to either update cart, checkout or continue shopping.</p>
+</blockquote>
+<pre class="highlight liquid"><code>&lt;a href="/products"&gt;Continue Shopping&lt;/a&gt;
+&lt;button name="commit" value="Update cart" &gt;Update cart&lt;/button&gt; <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">store</span><span class="p">.</span><span class="nv">payment_enabled</span><span class="err">?</span><span class="w"> </span><span class="p">%}</span>
+&lt;button name="commit" value="Checkout"&gt;Checkout&lt;/button&gt; <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+</code></pre>
+
+<p>In the above code, we simply have an <em>&#39;a&rsquo;</em> tag which takes user to the product catalog page. In the next line we have a <em>&#39;button&rsquo;</em> tag with value=&#39;update cart&rsquo; . This action allows user to update quantity if changed for any item added to the cart. And lastly, we have another <em>&#39;button&rsquo;</em> tag to allow user to checkout. Notice the use of {if store.payment_enabled? %} &hellip;.
+{endif} tag which makes the &#39;Checkout&rsquo; button displayed to the user only if at least one payment method is enabled by the store owner.
+Shopping cart header</p>
+
+<p>In an online store it is usually preferred to display shopping info across all pages of the site. Usually the shopping info is how many products are added to shopping cart, the total amount of goods added to cart and a link to view the shopping cart page.</p>
+
+<blockquote>
+<p>Here is the code:</p>
+</blockquote>
+<pre class="highlight liquid"><code>Your cart contains <span class="p">{{</span><span class="w"> </span><span class="nv">cart</span><span class="p">.</span><span class="nv">total_items</span><span class="w"> </span><span class="p">}}</span> items
+You have items worth <span class="p">{{</span><span class="w"> </span><span class="nv">cart</span><span class="p">.</span><span class="nv">total_amount</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">money</span><span class="p">:</span><span class="w"> </span>store<span class="w"> </span><span class="p">}}</span> in your cart
+&lt;a href="/cart"&gt;View Cart&lt;/a&gt;
+</code></pre>
+
+<p>The above code is self-explainatory. Tag in the first line displayed the total number of items added to the shopping cart. In the second line, the {{cart.total_amount | money : store }} tag displays the total worth of goods added to the shopping cart. In third line, we simply provide a link to the &#39;cart&rsquo; template to view the cart content.</p>
+
+<aside class="notice">
+Note: Usually the shopping cart header is included in the 'Layout&rsquo; template so that it remains consistent across the store front.
+</aside>
+
+          <h2 id="3-11-content-page">3.11. Content Page</h2>
+
+<p>The content pages added by user from store administration through the &lsquo;Pages&rsquo; section is rendered in the template called &#39;page.liquid&rsquo;.</p>
+
+<blockquote>
+<p>Here is the code which displayed the page title and content of a page.
+<code class="prettyprint">liquid
+&lt;h1&gt;{{ page.title }}&lt;/h1&gt;
+&lt;p&gt;{{ page.body }} &lt;/p&gt;
+</code>
+The tags are self-explanatory.</p>
+</blockquote>
 
       </div>
       <div class="dark-box">

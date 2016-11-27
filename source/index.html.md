@@ -18,7 +18,7 @@ includes:
   - tags/product_detail
   - tags/shopping_cart
   - tags/content_page
-
+  - all_tags/layout_template
 search: true
 ---
 

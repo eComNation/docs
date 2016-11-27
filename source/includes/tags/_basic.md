@@ -9,32 +9,32 @@ Variables are used to insert dynamic data like product title, product price etc.
 
 ```liquid
 <html> 
-<body> 
-  <p>{{ product.name }}</p> 
-</body> 
+	<body> 
+	  <p>{{ product.name }}</p> 
+	</body> 
 </html> 
 ```
 
 ### 3.1.2. Blocks
 
-Blocks are either used to render a block of HTML for set of data (example: product listing), or to conditionally render a block of HTML.
+Blocks are either used to render a block of HTML for set of data (example: Category listing), or to conditionally render a block of HTML.
 
 > Here is an example of a block:
 
 ```liquid
 <html> 
-<body> 
-{% for product in store.paginated_products %}
-  <li> 
-           {{ product.name }}
-  </li> 
-{% endfor %} 
-</body> 
+	<body> 
+		{% for category in store.categories %} 
+		  <li> 
+		    <a href="{{category.url}}">{{ category.name }}</a>
+		  </li> 
+		{% endfor %} 
+	</body> 
 </html>
 ```
 
-In the example, the block starts with the tag **{% for product in store.paginated_products %}** and ends with **{% endfor %}**
-In between the bocks  we have the variable to display product title. The **{{product.name}}** variable will be looped with *li* HTML tag to display a list of ‘product title’.
+In the example, the block starts with the tag **{% for category in store.categories %} ** and ends with **{% endfor %}**
+In between the bLocks we have the variable to display category name. The **{{category.name}}** variable will be looped with *li* HTML tag to display a list of category name.
 
 <aside class="notice">
 Note: Block always begins and ends with a single curly bracket and a percentage sign ‘{% ... %}’ while a variable begins and end with double curly brackets ‘{{ ... }}‘
@@ -66,18 +66,20 @@ This block is used when certain data or tag should be displayed conditionally. Y
 
 ```liquid
 <html>
-<head>
-.
-</head>
-<body>
-{% if store.payment_enabled? %}
-<button value="Checkout" >Checkout</button>
-{% endif %}
-</body>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		{% for category in store.categories %} 
+			{% if store.categories.name == "Tshirt" %}
+				<a href="{{category.url}}">{{ category.name }}</a>
+			{% endif %}
+		{% endfor %}
+	</body>
 </html>
 ```
 
-In the example, the **{% if store.payment_enabled? %}** condition checks if any payment option is enabled for the store. If a payment option is enabled, the Checkout button should be displayed otherwise it should not displayed.
+In the example, the **{% if store.categories.name %}** condition checks if any category name is equal to the "Tshirt". If the condition is true, the link should be displayed otherwise it should not displayed.
 
 
 ## 3.2. Using Stylesheets and JavaScript
@@ -98,11 +100,11 @@ Stylesheets and JavaScripts are the fundamental building blocks of any design. Y
 
 ```liquid
 <head>
-<title>My pet store</title>
-<link href="{{ current_theme.stylesheet_path }}/default.css" rel="stylesheet" type="text/css"/>
-<link href="{{ current_theme.stylesheet_path }}/orbit.css" rel="stylesheet" type="text/css"/>
-<script src="{{ current_theme.javascript_path }}/default.js" type="text/Javascript"></script>
-<script src="{{ current_theme.javascript_path }}/product_hover.js" type="text/Javascript"></script>
+	<title>My pet store</title>
+	<link href="{{ current_theme.stylesheet_path }}/default.css" rel="stylesheet" type="text/css"/>
+	<link href="{{ current_theme.stylesheet_path }}/orbit.css" rel="stylesheet" type="text/css"/>
+	<script src="{{ current_theme.javascript_path }}/default.js" type="text/Javascript"></script>
+	<script src="{{ current_theme.javascript_path }}/product_hover.js" type="text/Javascript"></script>
 </head>
 <body>
 ...
@@ -133,19 +135,19 @@ As explained earlier, you can create and use 'Pages Parts' into any template of 
 
 ```liquid
 <html>
-<body>
-<div class="content-left">
-...
-</div>
-<!-- Start right side bar -->
-<div class="content-right">
+	<body>
+		<div class="content-left">
+		...
+		</div>
+		<!-- Start right side bar -->
+		<div class="content-right">
 
-{% include "side_navigation" %}
+			{% include "side_navigation" %}
 
-</div>
+		</div>
 
-<!-- End right side bar -->
-<body>
+		<!-- End right side bar -->
+	<body>
 </html>
 ```
 
@@ -162,21 +164,21 @@ Earlier we discussed that the 'Layout' is the base template which contain common
 
 ```liquid
 <html>
-<head>
-...
-</head>
-<body>
-<!-- Start header --> 
-<div class="header">
-...
-</div>
-</!-- End header -->
-{{ content_for_layout }}
-<!-- Start footer ---> <div class="footer">
-...
-</div>
-<!-- End footer-->
-<body>
+	<head>
+	...
+	</head>
+	<body>
+		<!-- Start header --> 
+		<div class="header">
+		...
+		</div>
+		<!-- End header -->
+		{{ content_for_layout }}
+		<!-- Start footer ---> <div class="footer">
+		...
+		</div>
+		<!-- End footer-->
+	<body>
 </html>
 ```
 

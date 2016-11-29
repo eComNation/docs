@@ -42,7 +42,7 @@ Note: Block always begins and ends with a single curly bracket and a percentage 
 
 ### 3.1.3 Types of Blocks
 
-Mainly, there are two types of blocks supported by 39shops:
+Mainly, there are two types of blocks supported by eComNation:
 
 The *'For'* block:
 
@@ -84,7 +84,7 @@ In the example, the **{% if store.categories.name %}** condition checks if any c
 
 ## 3.2. Using Stylesheets and JavaScript
 
-Stylesheets and JavaScripts are the fundamental building blocks of any design. You can insert Stylesheets and JavaScripts into your 39shops theme within the *head* tag of your 'Layout'. Here are the tags:
+Stylesheets and JavaScripts are the fundamental building blocks of any design. You can insert Stylesheets and JavaScripts into your eComNation theme within the *head* tag of your 'Layout'. Here are the tags:
 
 >**For Stylesheet:**
 ```liquid
@@ -116,7 +116,7 @@ As shown in the example, the tags to insert Stylsheet and JavaScript are almost 
 
 ## 3.3. Inserting Images
 
-You can insert image to any template page including the 'Layout' template. In a normal website you use the *'img'* HTML tag to insert images. In case of 39shop, we also use the 'img' tag but the path to image is specified using this dynamic tag: **{{ current_theme.image_path }}**.
+You can insert image to any template page including the 'Layout' template. In a normal website you use the *'img'* HTML tag to insert images. In case of eComNation, we also use the 'img' tag but the path to image is specified using this dynamic tag: **{{ current_theme.image_path }}**.
 
 >Let me show you the usage with an example:
 
@@ -129,7 +129,7 @@ In this example, 'american-express.png' is the image file stored in the 'images'
 
 ## 3.4. Inserting Page Parts
 
-As explained earlier, you can create and use 'Pages Parts' into any template of your 39shops theme. Suppose you created a page part called 'side_navigation' and now you want to display it in your 'Catalog' template. Open the 'Catalogue' template and move your cursor to the HTML tag where you want to insert the page part. Use this tag: **{% include 'side_navigation' %}**. That's it, the page part 'side_navigation' is now included into the catalogue page and category navigation menu will be displayed in this page.
+As explained earlier, you can create and use 'Pages Parts' into any template of your eComNation theme. Suppose you created a page part called 'side_navigation' and now you want to display it in your 'Catalog' template. Open the 'Catalogue' template and move your cursor to the HTML tag where you want to insert the page part. Use this tag: **{% include 'side_navigation' %}**. That's it, the page part 'side_navigation' is now included into the catalogue page and category navigation menu will be displayed in this page.
 
 >Here is an example:
 

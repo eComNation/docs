@@ -19,6 +19,15 @@ includes:
   - tags/shopping_cart
   - tags/content_page
   - all_tags/layout_template
+  - all_tags/home_template
+  - all_tags/catalouge_template
+  - all_tags/product_template
+  - all_tags/cart_template
+  - all_tags/error_tags
+  - all_tags/login_template
+  - all_tags/register_template
+  - all_tags/forgot_template
+  - all_tags/reset_pass_template
 search: true
 ---
 

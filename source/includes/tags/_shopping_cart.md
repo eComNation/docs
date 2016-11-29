@@ -7,7 +7,7 @@ All dynamic tags of shopping cart page are within the *'form'* tag which is a st
 >Here is form action:
 
 ```liquid
-<form action="/cart/update" method="post" id="cart">
+<form action="/cart" method="post" id="cart">
 ---- shopping cart dynamic tags in this area ----
 </form>
 ```

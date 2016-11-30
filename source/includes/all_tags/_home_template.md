@@ -1,4 +1,4 @@
-## 4.2. Home Template tags.
+## 4.2. Home Template tags
 
 ### 4.2.1. Feature product
 
@@ -17,8 +17,10 @@
 
 <table>
 	<thead>
-		<td>Description </td>
-		<td>Tags</td>
+		<tr>
+			<th>Description</th>
+			<th>Tags</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>
@@ -63,8 +65,10 @@
 
 <table>
 	<thead>
-		<td>Description </td>
-		<td>Tags</td>
+		<tr>
+			<th>Description</th>
+			<th>Tags</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>

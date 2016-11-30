@@ -1,4 +1,4 @@
-## 4.6. Error tags.
+## 4.6. Error tags
 
 These tags can be used in all the pages
 
@@ -11,8 +11,10 @@ These tags can be used in all the pages
 
 <table>
 	<thead>
-		<td>Description</td>
-		<td>Tags</td>
+		<tr>
+			<th>Description</th>
+			<th>Tags</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>

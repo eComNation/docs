@@ -1,4 +1,4 @@
-## 4.5. Cart Template tags.
+## 4.5. Cart Template tags
 
 ### 4.5.1. Iterate Cart items
 
@@ -26,8 +26,10 @@
 
 <table>
 	<thead>
-		<td>Description  </td>
-		<td>Tags</td>
+		<tr>
+			<th>Description</th>
+			<th>Tags</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>
@@ -83,8 +85,10 @@
 
 <table>
 	<thead>
-		<td>Description</td>
-		<td>Tags</td>
+		<tr>
+			<th>Description</th>
+			<th>Tags</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>

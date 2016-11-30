@@ -71,8 +71,10 @@
 
 <table>
 	<thead>
-		<td>Description </td>
-		<td>Tags</td>
+		<tr>
+			<th>Description</th>
+			<th>Tags</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>
@@ -157,8 +159,10 @@
 
 <table>
 	<thead>
-		<td>Description</td>
-		<td>Tags</td>
+		<tr>
+			<th>Description</th>
+			<th>Tags</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>
@@ -199,8 +203,10 @@
 {% for category in store.categories %} {% endfor %}
 <table>
 	<thead>
-		<td>Description </td>
-		<td>Tags</td>
+		<tr>
+			<th>Description</th>
+			<th>Tags</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>
@@ -223,8 +229,10 @@
 ```
 <table>
 	<thead>
-		<td>Description </td>
-		<td>Tags</td>
+		<tr>
+			<th>Description</th>
+			<th>Tags</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>
@@ -249,8 +257,10 @@
 ```
 <table>
 	<thead>
-		<td>Description</td>
-		<td> Tags</td>
+		<tr>
+			<th>Description</th>
+			<th>Tags</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>

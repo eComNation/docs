@@ -1,4 +1,4 @@
-## 4.7. Login form.
+## 4.7. Login form
 
 > Login form syntax :
 
@@ -15,8 +15,10 @@
 
 <table>
 	<thead>
-		<td>Description</td>
-		<td>Tags / Parameter</td>
+		<tr>
+			<th>Description</th>
+			<th>Tags / Parameter</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>

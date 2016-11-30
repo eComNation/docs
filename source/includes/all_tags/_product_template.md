@@ -1,4 +1,4 @@
-## 4.4. Product Template tags.
+## 4.4. Product Template tags
 
 ### 4.4.1. Basic liquid tags for Product 
 
@@ -15,8 +15,10 @@
 
 <table>
 	<thead>
-		<td>Description </td>
-		<td>Tags</td>
+		<tr>
+			<th>Description</th>
+			<th>Tags</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>

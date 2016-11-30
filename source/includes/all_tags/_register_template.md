@@ -1,4 +1,4 @@
-## 4.8. Registration form.
+## 4.8. Registration form
 
 > Registration form syntax :
 
@@ -18,8 +18,10 @@
 
 <table>
 	<thead>
-		<td>Description</td>
-		<td>Tags / Parameter</td>
+		<tr>
+			<th>Description</th>
+			<th>Tags / Parameter</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>

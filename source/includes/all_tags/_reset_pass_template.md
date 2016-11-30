@@ -1,4 +1,4 @@
-## 4.10. Password Reset form.
+## 4.10. Password Reset form
 
 >  Password Reset form syntax :
 
@@ -13,8 +13,10 @@
 
 <table>
 	<thead>
-		<td>Description</td>
-		<td>Tags / Parameter</td>
+		<tr>
+			<th>Description</th>
+			<th>Tags / Parameter</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>

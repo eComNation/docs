@@ -1,4 +1,4 @@
-## 4.9. Forgot password form.
+## 4.9. Forgot password form
 
 > Forgot password form syntax :
 
@@ -12,8 +12,10 @@
 
 <table>
 	<thead>
-		<td>Description</td>
-		<td>Tags / Parameter</td>
+		<tr>
+			<th>Description</th>
+			<th>Tags / Parameter</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>

@@ -189,7 +189,7 @@ html, body {
       padding-left: $nav-padding + $nav-indent;
       font-size: 12px;
     }
-
+    .tocify-item {color: #fff;}
     // for embossed look:
     @include embossed-bg;
     &>li:last-child {
@@ -430,11 +430,11 @@ html, body {
     }
 
     tr:nth-child(odd)>td {
-      background-color: lighten($main-bg,4.2%);
+      background-color: lighten($main-tr-bg,4.2%);
     }
 
     tr:nth-child(even)>td {
-      background-color: lighten($main-bg,2.4%);
+      background-color: lighten($main-tr-bg,2.4%);
     }
   }
 

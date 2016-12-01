@@ -99,7 +99,7 @@
       </span>
     </a>
     <div class="tocify-wrapper">
-      <img src="images/logo.png" />
+      <img src="images/logo1.png" />
         <div class="lang-selector">
               <a href="#" data-language-name="liquid">liquid</a>
         </div>
@@ -112,6 +112,7 @@
         <ul class="toc-footer">
             <li><a href='#'>Sign Up for a Developer Key</a></li>
             <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+            <li><a href="#">Ask Question on stackover flow.</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -292,32 +293,32 @@ elements from the server.
 <p>Here is an example of variable:</p>
 </blockquote>
 <pre class="highlight liquid"><code>&lt;html&gt; 
-&lt;body&gt; 
-  &lt;p&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>&lt;/p&gt; 
-&lt;/body&gt; 
+    &lt;body&gt; 
+      &lt;p&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>&lt;/p&gt; 
+    &lt;/body&gt; 
 &lt;/html&gt; 
 </code></pre>
 
 <h3 id="3-1-2-blocks">3.1.2. Blocks</h3>
 
-<p>Blocks are either used to render a block of HTML for set of data (example: product listing), or to conditionally render a block of HTML.</p>
+<p>Blocks are either used to render a block of HTML for set of data (example: Category listing), or to conditionally render a block of HTML.</p>
 
 <blockquote>
 <p>Here is an example of a block:</p>
 </blockquote>
 <pre class="highlight liquid"><code>&lt;html&gt; 
-&lt;body&gt; 
-<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>product<span class="w"> </span>in<span class="w"> </span>store.paginated_products<span class="w"> </span><span class="p">%}</span>
-  &lt;li&gt; 
-           <span class="p">{{</span><span class="w"> </span><span class="nv">product</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>
-  &lt;/li&gt; 
-<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span> 
-&lt;/body&gt; 
+    &lt;body&gt; 
+        <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>category<span class="w"> </span>in<span class="w"> </span>store.categories<span class="w"> </span><span class="p">%}</span> 
+          &lt;li&gt; 
+            &lt;a href="<span class="p">{{</span><span class="nv">category</span><span class="p">.</span><span class="nv">url</span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;
+          &lt;/li&gt; 
+        <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span> 
+    &lt;/body&gt; 
 &lt;/html&gt;
 </code></pre>
 
-<p>In the example, the block starts with the tag <strong>{% for product in store.paginated_products %}</strong> and ends with <strong>{% endfor %}</strong>
-In between the bocks  we have the variable to display product title. The <strong>{{product.name}}</strong> variable will be looped with <em>li</em> HTML tag to display a list of ‘product title’.</p>
+<p>In the example, the block starts with the tag <strong>{% for category in store.categories %} ** and ends with **{% endfor %}</strong>
+In between the bLocks we have the variable to display category name. The <strong>{{category.name}}</strong> variable will be looped with <em>li</em> HTML tag to display a list of category name.</p>
 
 <aside class="notice">
 Note: Block always begins and ends with a single curly bracket and a percentage sign ‘{% &hellip; %}’ while a variable begins and end with double curly brackets ‘{{ &hellip; }}‘
@@ -325,7 +326,7 @@ Note: Block always begins and ends with a single curly bracket and a percentage 
 
 <h3 id="3-1-3-types-of-blocks">3.1.3 Types of Blocks</h3>
 
-<p>Mainly, there are two types of blocks supported by 39shops:</p>
+<p>Mainly, there are two types of blocks supported by eComNation:</p>
 
 <p>The <em>&lsquo;For&rsquo;</em> block:</p>
 
@@ -347,22 +348,24 @@ Note: Block always begins and ends with a single curly bracket and a percentage 
 <p>Here is an example of the &#39;If&rsquo; block</p>
 </blockquote>
 <pre class="highlight liquid"><code>&lt;html&gt;
-&lt;head&gt;
-.
-&lt;/head&gt;
-&lt;body&gt;
-<span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">store</span><span class="p">.</span><span class="nv">payment_enabled</span><span class="err">?</span><span class="w"> </span><span class="p">%}</span>
-&lt;button value="Checkout" &gt;Checkout&lt;/button&gt;
-<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
-&lt;/body&gt;
+    &lt;head&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>category<span class="w"> </span>in<span class="w"> </span>store.categories<span class="w"> </span><span class="p">%}</span> 
+            <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">store</span><span class="p">.</span><span class="nv">categories</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Tshirt"</span><span class="w"> </span><span class="p">%}</span>
+                &lt;a href="<span class="p">{{</span><span class="nv">category</span><span class="p">.</span><span class="nv">url</span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;
+            <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+        <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+    &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
 
-<p>In the example, the <strong>{% if store.payment_enabled? %}</strong> condition checks if any payment option is enabled for the store. If a payment option is enabled, the Checkout button should be displayed otherwise it should not displayed.</p>
+<p>In the example, the <strong>{% if store.categories.name %}</strong> condition checks if any category name is equal to the &ldquo;Tshirt&rdquo;. If the condition is true, the link should be displayed otherwise it should not displayed.</p>
 
 <h2 id="3-2-using-stylesheets-and-javascript">3.2. Using Stylesheets and JavaScript</h2>
 
-<p>Stylesheets and JavaScripts are the fundamental building blocks of any design. You can insert Stylesheets and JavaScripts into your 39shops theme within the <em>head</em> tag of your &#39;Layout&rsquo;. Here are the tags:</p>
+<p>Stylesheets and JavaScripts are the fundamental building blocks of any design. You can insert Stylesheets and JavaScripts into your eComNation theme within the <em>head</em> tag of your &#39;Layout&rsquo;. Here are the tags:</p>
 
 <blockquote>
 <p><strong>For Stylesheet:</strong>
@@ -378,11 +381,11 @@ Note: Block always begins and ends with a single curly bracket and a percentage 
 <p>Here is an example:</p>
 </blockquote>
 <pre class="highlight liquid"><code>&lt;head&gt;
-&lt;title&gt;My pet store&lt;/title&gt;
-&lt;link href="<span class="p">{{</span><span class="w"> </span><span class="nv">current_theme</span><span class="p">.</span><span class="nv">stylesheet_path</span><span class="w"> </span><span class="p">}}</span>/default.css" rel="stylesheet" type="text/css"/&gt;
-&lt;link href="<span class="p">{{</span><span class="w"> </span><span class="nv">current_theme</span><span class="p">.</span><span class="nv">stylesheet_path</span><span class="w"> </span><span class="p">}}</span>/orbit.css" rel="stylesheet" type="text/css"/&gt;
-&lt;script src="<span class="p">{{</span><span class="w"> </span><span class="nv">current_theme</span><span class="p">.</span><span class="nv">javascript_path</span><span class="w"> </span><span class="p">}}</span>/default.js" type="text/Javascript"&gt;&lt;/script&gt;
-&lt;script src="<span class="p">{{</span><span class="w"> </span><span class="nv">current_theme</span><span class="p">.</span><span class="nv">javascript_path</span><span class="w"> </span><span class="p">}}</span>/product_hover.js" type="text/Javascript"&gt;&lt;/script&gt;
+    &lt;title&gt;My pet store&lt;/title&gt;
+    &lt;link href="<span class="p">{{</span><span class="w"> </span><span class="nv">current_theme</span><span class="p">.</span><span class="nv">stylesheet_path</span><span class="w"> </span><span class="p">}}</span>/default.css" rel="stylesheet" type="text/css"/&gt;
+    &lt;link href="<span class="p">{{</span><span class="w"> </span><span class="nv">current_theme</span><span class="p">.</span><span class="nv">stylesheet_path</span><span class="w"> </span><span class="p">}}</span>/orbit.css" rel="stylesheet" type="text/css"/&gt;
+    &lt;script src="<span class="p">{{</span><span class="w"> </span><span class="nv">current_theme</span><span class="p">.</span><span class="nv">javascript_path</span><span class="w"> </span><span class="p">}}</span>/default.js" type="text/Javascript"&gt;&lt;/script&gt;
+    &lt;script src="<span class="p">{{</span><span class="w"> </span><span class="nv">current_theme</span><span class="p">.</span><span class="nv">javascript_path</span><span class="w"> </span><span class="p">}}</span>/product_hover.js" type="text/Javascript"&gt;&lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
 ...
@@ -393,7 +396,7 @@ Note: Block always begins and ends with a single curly bracket and a percentage 
 
 <h2 id="3-3-inserting-images">3.3. Inserting Images</h2>
 
-<p>You can insert image to any template page including the &#39;Layout&rsquo; template. In a normal website you use the <em>&#39;img&rsquo;</em> HTML tag to insert images. In case of 39shop, we also use the &#39;img&rsquo; tag but the path to image is specified using this dynamic tag: <strong>{{ current_theme.image_path }}</strong>.</p>
+<p>You can insert image to any template page including the &#39;Layout&rsquo; template. In a normal website you use the <em>&#39;img&rsquo;</em> HTML tag to insert images. In case of eComNation, we also use the &#39;img&rsquo; tag but the path to image is specified using this dynamic tag: <strong>{{ current_theme.image_path }}</strong>.</p>
 
 <blockquote>
 <p>Let me show you the usage with an example:</p>
@@ -405,25 +408,25 @@ Note: Block always begins and ends with a single curly bracket and a percentage 
 
 <h2 id="3-4-inserting-page-parts">3.4. Inserting Page Parts</h2>
 
-<p>As explained earlier, you can create and use &#39;Pages Parts&rsquo; into any template of your 39shops theme. Suppose you created a page part called &#39;side_navigation&rsquo; and now you want to display it in your &#39;Catalog&rsquo; template. Open the &#39;Catalogue&rsquo; template and move your cursor to the HTML tag where you want to insert the page part. Use this tag: <strong>{% include &#39;side_navigation&rsquo; %}</strong>. That&rsquo;s it, the page part &#39;side_navigation&rsquo; is now included into the catalogue page and category navigation menu will be displayed in this page.</p>
+<p>As explained earlier, you can create and use &#39;Pages Parts&rsquo; into any template of your eComNation theme. Suppose you created a page part called &#39;side_navigation&rsquo; and now you want to display it in your &#39;Catalog&rsquo; template. Open the &#39;Catalogue&rsquo; template and move your cursor to the HTML tag where you want to insert the page part. Use this tag: <strong>{% include &#39;side_navigation&rsquo; %}</strong>. That&rsquo;s it, the page part &#39;side_navigation&rsquo; is now included into the catalogue page and category navigation menu will be displayed in this page.</p>
 
 <blockquote>
 <p>Here is an example:</p>
 </blockquote>
 <pre class="highlight liquid"><code>&lt;html&gt;
-&lt;body&gt;
-&lt;div class="content-left"&gt;
-...
-&lt;/div&gt;
-&lt;!-- Start right side bar --&gt;
-&lt;div class="content-right"&gt;
+    &lt;body&gt;
+        &lt;div class="content-left"&gt;
+        ...
+        &lt;/div&gt;
+        &lt;!-- Start right side bar --&gt;
+        &lt;div class="content-right"&gt;
 
-<span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="s2">"side_navigation"</span><span class="w"> </span><span class="p">%}</span>
+            <span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="s2">"side_navigation"</span><span class="w"> </span><span class="p">%}</span>
 
-&lt;/div&gt;
+        &lt;/div&gt;
 
-&lt;!-- End right side bar --&gt;
-&lt;body&gt;
+        &lt;!-- End right side bar --&gt;
+    &lt;body&gt;
 &lt;/html&gt;
 </code></pre>
 
@@ -439,21 +442,21 @@ Note: Block always begins and ends with a single curly bracket and a percentage 
 <p>Here is an example of a typical &#39;Layout&rsquo; template:</p>
 </blockquote>
 <pre class="highlight liquid"><code>&lt;html&gt;
-&lt;head&gt;
-...
-&lt;/head&gt;
-&lt;body&gt;
-&lt;!-- Start header --&gt; 
-&lt;div class="header"&gt;
-...
-&lt;/div&gt;
-&lt;/!-- End header --&gt;
-<span class="p">{{</span><span class="w"> </span><span class="nv">content_for_layout</span><span class="w"> </span><span class="p">}}</span>
-&lt;!-- Start footer ---&gt; &lt;div class="footer"&gt;
-...
-&lt;/div&gt;
-&lt;!-- End footer--&gt;
-&lt;body&gt;
+    &lt;head&gt;
+    ...
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- Start header --&gt; 
+        &lt;div class="header"&gt;
+        ...
+        &lt;/div&gt;
+        &lt;!-- End header --&gt;
+        <span class="p">{{</span><span class="w"> </span><span class="nv">content_for_layout</span><span class="w"> </span><span class="p">}}</span>
+        &lt;!-- Start footer ---&gt; &lt;div class="footer"&gt;
+        ...
+        &lt;/div&gt;
+        &lt;!-- End footer--&gt;
+    &lt;body&gt;
 &lt;/html&gt;
 </code></pre>
 
@@ -735,7 +738,7 @@ Note: You can use a variety of Javascript and Jquery functions to display produc
 <blockquote>
 <p>Here is form action:</p>
 </blockquote>
-<pre class="highlight liquid"><code>&lt;form action="/cart/update" method="post" id="cart"&gt;
+<pre class="highlight liquid"><code>&lt;form action="/cart" method="post" id="cart"&gt;
 ---- shopping cart dynamic tags in this area ----
 &lt;/form&gt;
 </code></pre>
@@ -844,6 +847,1615 @@ Note: Usually the shopping cart header is included in the 'Layout&rsquo; templat
 </code></pre>
 
 <p>The tags are self-explanatory.</p>
+
+          <h1 id="4-cheatsheet">4. CheatSheet</h1>
+
+<h2 id="4-1-layout-template-tags">4.1. Layout Template tags.</h2>
+
+<h3 id="4-1-1-title-and-meta-liquid-tags">4.1.1. Title and Meta liquid tags</h3>
+
+<blockquote>
+<p>Title and Meta liquid tags :</p>
+</blockquote>
+<pre class="highlight html"><code><span class="nt">&lt;html&gt;</span> 
+  <span class="nt">&lt;head&gt;</span>
+  {% if store.which_template == 'Home' %}
+    <span class="nt">&lt;title&gt;</span>{{ store.name }}<span class="nt">&lt;/title&gt;</span>
+  {% elsif store.which_template == 'Products' %}
+    <span class="nt">&lt;title&gt;</span>{{ store.name }}<span class="nt">&lt;/title&gt;</span>
+  {% elsif store.which_template == 'Product_Detail' %}
+    {% if product.browser_title == blank %}
+      <span class="nt">&lt;title&gt;</span>{{ product.name }}<span class="nt">&lt;/title&gt;</span>
+    {% else %} 
+      <span class="nt">&lt;title&gt;</span>{{ product.browser_title }}<span class="nt">&lt;/title&gt;</span>
+    {% endif %}
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">"{{ product.meta_description }}"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"keywords"</span> <span class="na">content=</span><span class="s">"{{ product.meta_keywords }}"</span><span class="nt">/&gt;</span>
+  {% elsif store.which_template == 'Category' %}
+    {% if store.active_category.browser_title == blank %}
+      <span class="nt">&lt;title&gt;</span>{{ store.active_category.name }}<span class="nt">&lt;/title&gt;</span>
+    {% else %}
+      <span class="nt">&lt;title&gt;</span>{{ store.active_category.browser_title }}<span class="nt">&lt;/title&gt;</span>
+    {% endif%}
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">"{{ store.active_category.meta_description }}"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"keywords"</span> <span class="na">content=</span><span class="s">"{{ store.active_category.meta_keywords }}"</span><span class="nt">/&gt;</span>
+  {% elsif store.which_template == 'Page' %}
+    {% if page.browser_title == blank %}
+      <span class="nt">&lt;title&gt;</span>{{ page.title }}<span class="nt">&lt;/title&gt;</span>
+    {% else %} 
+      <span class="nt">&lt;title&gt;</span>{{ page.browser_title }}<span class="nt">&lt;/title&gt;</span>
+    {% endif %}
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">"{{page.meta_description}}"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"keywords"</span> <span class="na">content=</span><span class="s">"{{page.meta_keywords}}"</span><span class="nt">/&gt;</span>
+  {% elsif store.which_template == 'Cart' %}
+    <span class="nt">&lt;title&gt;</span>{{ store.name }}<span class="nt">&lt;/title&gt;</span>
+  {% else %}  
+    {% if post.browser_title != blank %}
+      <span class="nt">&lt;title&gt;</span>{{ post.browser_title }}<span class="nt">&lt;/title&gt;</span>
+      <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:title"</span> <span class="na">content=</span><span class="s">"{{ post.browser_title }}"</span> <span class="nt">/&gt;</span>
+    {% else %}
+      {% if post.title == blank %} 
+        <span class="nt">&lt;title&gt;</span>{{ store.name }}<span class="nt">&lt;/title&gt;</span>
+      {% else %}
+        <span class="nt">&lt;title&gt;</span>{{ post.title }}<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:title"</span> <span class="na">content=</span><span class="s">"{{ post.title }}"</span> <span class="nt">/&gt;</span>
+      {% endif %}
+    {% endif %}
+    {% if post.meta_description != blank %}
+      <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">"{{ post.meta_description }}"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:description"</span> <span class="na">content=</span><span class="s">"{{ post.meta_description }}"</span> <span class="nt">/&gt;</span>
+    {% else %}
+      <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">"{{ post.meta_description }}"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:description"</span> <span class="na">content=</span><span class="s">"{{ post.meta_description }}"</span> <span class="nt">/&gt;</span>
+    {% endif %}
+    {% if post.meta_keywords != blank %}
+      <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"keywords"</span> <span class="na">content=</span><span class="s">"{{ post.meta_keywords }}"</span><span class="nt">&gt;</span>
+    {% else %}
+      <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"keywords"</span> <span class="na">content=</span><span class="s">"{{ post.meta_keywords }}"</span><span class="nt">&gt;</span>
+    {% endif %}
+  {% endif %}
+  <span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;/html&gt;</span> 
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Reture Name of the store</td>
+            <td>{{ store.name }}</td>
+        </tr>
+        <tr>
+            <td>To render the other template</td>
+            <td>{{ content_for_layout }}</td>
+        </tr>
+        <tr>
+            <td>Browser title Product</td>
+            <td>{{ product.browser_title }}</td>
+        </tr>
+        <tr>
+            <td>Product Mate tag description</td>
+            <td>{{ product.meta_description }}</td>
+        </tr>
+        <tr>
+            <td>Product Mate tag keyword</td>
+            <td>{{ product.meta_keywords }}</td>
+        </tr>
+        <tr>
+            <td>Return the Current category (in catelogue page)</td>
+            <td>{{ store.active_category.name }}</td>
+        </tr>
+        <tr>
+            <td>Browser title for Current category</td>
+            <td>{{ store.active_category.browser_title }}</td>
+        </tr>
+        <tr>
+            <td>Mate tag description for Current Category</td>
+            <td>{{ store.active_category.meta_description }}</td>
+        </tr>
+        <tr>
+            <td>Mate tag keyword for Current Category</td>
+            <td>{{ store.active_category.meta_keywords }}</td>
+        </tr>
+        <tr>
+            <td>Browser title for pages</td>
+            <td>{{ page.browser_title }}</td>
+        </tr>
+        <tr>
+            <td>Mate tag description for page</td>
+            <td>{{ page.meta_description }}</td>
+        </tr>
+        <tr>
+            <td>Mate tag keyword for page</td>
+            <td>{{ page.meta_keywords }}</td>
+        </tr>
+        <tr>
+            <td>Returns Blog post title</td>
+            <td>{{ post.title }}</td>
+        </tr>
+        <tr>
+            <td>Browser title for Blog post</td>
+            <td>{{ post.browser_title }}</td>
+        </tr>
+        <tr>
+            <td>Mate tag description for Blog post</td>
+            <td>{{ post.meta_description }}</td>
+        </tr>
+        <tr>
+            <td>Mate tag keyword for Blog post</td>
+            <td>{{ post.meta_keywords }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="4-1-2-stylesheet-and-javascript-liquid-tags">4.1.2. Stylesheet and Javascript liquid tags</h3>
+
+<blockquote>
+<p>Stylesheet and Javascript liquid tags :</p>
+</blockquote>
+<pre class="highlight html"><code><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span>  <span class="na">href=</span><span class="s">"{{current_theme.stylesheet_path }}/style.css?{{ store.css_cache_token }}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"{{ current_theme.javascript_path }}/main.js?{{ store.js_cache_token }}"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Return the path of the Stylesheet director</td>
+            <td>{{ current_theme.stylesheet_path }}</td>
+        </tr>
+        <tr>
+            <td>Clear the css cache on the server</td>
+            <td>{{ store.css_cache_token }}</td>
+        </tr>
+        <tr>
+            <td>Return the path of the javascript directory </td>
+            <td>{{ current_theme.javascript_path }}</td>
+        </tr>
+        <tr>
+            <td>Clear the js cache on the server</td>
+            <td>{{ store.js_cache_token }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="4-1-3-category-iteration-liquid-tags">4.1.3. Category iteration liquid tags</h3>
+
+<blockquote>
+<p>Category and subcategory iteration  :</p>
+</blockquote>
+<pre class="highlight html"><code>{% for category in store.categories %}
+  {% if category.child_categories.size == 0 %}
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">""</span> <span class="na">href=</span><span class="s">"{{ category.url }}"</span><span class="nt">&gt;</span>{{ category.name }}<span class="nt">&lt;/a&gt;</span>
+  {% else %}
+    <span class="nt">&lt;a</span>  <span class="na">href=</span><span class="s">"{{ category.url }}"</span><span class="nt">&gt;</span>{{ category.name }}<span class="nt">&lt;/a&gt;</span>
+    {% for sub_category in category.child_categories %}
+       <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ sub_category.url }}"</span><span class="nt">&gt;</span>{{ sub_category.name }}<span class="nt">&lt;/a&gt;</span>
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+</code></pre>
+
+<p>{% for category in store.categories %} {% endfor %}
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Return category url</td>
+            <td>{{ category.url }}</td>
+        </tr>
+        <tr>
+            <td>Return category name</td>
+            <td>{{ category.name }}</td>
+        </tr>
+    </tbody>
+</table></p>
+
+<h3 id="4-1-4-total-cast-items-liquid-tags">4.1.4. Total cast items liquid tags</h3>
+
+<blockquote>
+<p>Total cast items  :</p>
+</blockquote>
+<pre class="highlight html"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/cart"</span><span class="nt">&gt;</span>{{ cart.total_items }} <span class="nt">&lt;/a&gt;</span>
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Return total cart items</td>
+            <td>{{ cart.total_items }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="4-1-4-current-logged-in-user-amp-logout-liquid-tags">4.1.4. Current logged in User &amp; Logout liquid tags</h3>
+
+<blockquote>
+<p>Current logged in User &amp; logout tag:</p>
+</blockquote>
+<pre class="highlight html"><code>{% if current_user_name %}
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/customer/dashboard"</span><span class="nt">&gt;</span>Welcome, {{ current_user_name }}<span class="nt">&lt;/a&gt;</span>
+  {% customer_logout_tag Logout %}
+{% else %}
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">""</span> <span class="na">href=</span><span class="s">"/customer/login"</span><span class="nt">&gt;</span>Login<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">""</span> <span class="na">href=</span><span class="s">"/customer/customers"</span><span class="nt">&gt;</span>Register<span class="nt">&lt;/a&gt;</span>
+{% endif %}
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Return current loggedin users Full name</td>
+            <td>{{ current_user_name }}</td>
+        </tr>
+        <tr>
+            <td>Generate logout link</td>
+            <td>{% customer_logout_tag Logout %}</td>
+        </tr>
+    </tbody>
+</table>
+
+          <h2 id="4-2-home-template-tags">4.2. Home Template tags</h2>
+
+<h3 id="4-2-1-feature-product">4.2.1. Feature product</h3>
+
+<blockquote>
+<p>Feature product  liquid tags :</p>
+</blockquote>
+<pre class="highlight html"><code>{% for product in store.featured_products %}
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ product.url }}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">" {{ product | product_img_url : 'list' }}"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">/&gt;</span>
+    {{ product.name }}
+    {{ product.price | money:store }}
+  <span class="nt">&lt;/a&gt;</span>
+{% endfor %}
+</code></pre>
+
+<p>{% for product in store.featured_products %} &hellip; {% endfor %}</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Return the product url</td>
+            <td>{{ product.url }}</td>
+        </tr>
+        <tr>
+            <td>Generates the image tag with its product image url</td>
+            <td>{{ product | product_img_tag }} </td>
+        </tr>
+        <tr>
+            <td>Return product image url</td>
+            <td>{{ product | product_img_url : &lsquo;list&rsquo; }} eg: medium, list, thumb</td>
+        </tr>
+        <tr>
+            <td>Return the product name</td>
+            <td> {{ product.name }}</td>
+        </tr>
+        <tr>
+            <td>Return the price of a product</td>
+            <td>{{ product.price | money:store }}</td>
+        </tr>
+        <tr>
+            <td>Return the previous price of a product</td>
+            <td>{{ product.previous_price | money:store }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="4-2-2-blog-post">4.2.2. Blog post</h3>
+
+<blockquote>
+<p>Blog post liquid tags for home template :</p>
+</blockquote>
+<pre class="highlight html"><code>{% for post in store.blog_posts limit:2 %}  
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ post.url }} "</span><span class="nt">&gt;</span>{{post.title}} <span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"{{ post.hero_image.big_url }}"</span> <span class="na">alt=</span><span class="s">"{{ post.hero_image.alt_text }}"</span><span class="nt">&gt;</span> 
+  {{post.published_on | date: "%B %d, %Y" }} 
+{% endfor %}
+</code></pre>
+
+<p>{% for post in store.blog_posts %} &hellip; {% endfor %}</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Return the blog post url</td>
+            <td>{{ post.url }}</td>
+        </tr>
+        <tr>
+            <td>Return big image for blog post</td>
+            <td>{{ post.hero_image.big_url }}</td>
+        </tr>
+        <tr>
+            <td>Return small image for blog post</td>
+            <td>{{ post.hero_image.small_url }}</td>
+        </tr>
+        <tr>
+            <td>Return thumb image for blog post</td>
+            <td>{{ post.hero_image.thumb_url }}</td>
+        </tr>
+        <tr>
+            <td>Return alt text for hero image</td>
+            <td> {{ post.hero_image.alt_text }}</td>
+        </tr>
+        <tr>
+            <td>Return the published date of the post</td>
+            <td>{{ post.published_on | date: &ldquo;%B %d, %Y&rdquo; }} </td>
+        </tr>
+    </tbody>
+</table>
+
+          
+          <h2 id="4-4-product-template-tags">4.4. Product Template tags</h2>
+
+<h3 id="4-4-1-basic-liquid-tags-for-product">4.4.1. Basic liquid tags for Product</h3>
+
+<blockquote>
+<p>Basic liquid tags for Product :</p>
+</blockquote>
+<pre class="highlight html"><code><span class="nt">&lt;h1&gt;</span>{{ product.name }}<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;strong&gt;</span>{{ product.price | money : store | remove: ".00" }}  
+<span class="nt">&lt;del&gt;</span>{{ product.previous_price | money : store | remove: ".00" }}<span class="nt">&lt;/del&gt;</span>
+<span class="nt">&lt;p&gt;</span>{{ product.description }}<span class="nt">&lt;/p&gt;</span>
+{{ product.detailed_description }}
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Return name of the product</td>
+            <td>{{ product.name }}</td>
+        </tr>
+        <tr>
+            <td>Return product SKU</td>
+            <td>{{ product.sku }}</td>
+        </tr>
+        <tr>
+            <td>Return the product url</td>
+            <td>{{ product.url }}</td>
+        </tr>
+        <tr>
+            <td>Return product category</td>
+            <td>{{ product.category.name }}</td>
+        </tr>
+        <tr>
+            <td>Return product parent category</td>
+            <td>{{ product.category.parent.name }}</td>
+        </tr>
+        <tr>
+            <td>Return Products price with currency</td>
+            <td>{{ product.price | money : store }}</td>
+        </tr>
+        <tr>
+            <td>Return Products previous price with currency</td>
+            <td>{{ product.previous_price | money : store }}</td>
+        </tr>
+        <tr>
+            <td>Return the product Description of the product page</td>
+            <td>{{ product.description }}</td>
+        </tr>
+        <tr>
+            <td>Returen Detail Description of the product</td>
+            <td>{{ product.detailed_description | paragraphs }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="4-4-2-iterate-product-images">4.4.2. Iterate Product images</h3>
+
+<blockquote>
+<p>Iterate Product images :</p>
+</blockquote>
+<pre class="highlight html"><code>{% for product_image in product.product_images %}
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"{{ product_image | img_url: 'medium'}}"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span> 
+{% endfor %}
+</code></pre>
+
+<p>{% for product_image in product.product_images %} &hellip; {% endfor %}</p>
+
+<table>
+    <thead>
+        <td>Tags</td>
+        <td>Description</td>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Return url of Orignal image or generate image tag with url</td>
+            <td>{{ product | product_img_url }} or {{ product | images_tag }}</td>
+        </tr>
+        <tr>
+            <td>Return url of Medium image or generate image tag with url</td>
+            <td>{{ product | product_img_url: &lsquo;medium&rsquo; }} or {{ product | images_tag: 'medium&rsquo; }}</td>
+        </tr>
+        <tr>
+            <td>Return url of List image or generate image tag with url</td>
+            <td>{{ product | product_img_url: 'list&rsquo; }} or {{ product | images_tag: 'list&rsquo; }}</td>
+        </tr>
+        <tr>
+            <td>Return url of Thumb image or generate image tag with url</td>
+            <td>{{ product | product_img_url: 'thumb&rsquo; }} or {{ product | images_tag: 'thumb&rsquo; }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="4-4-2-iterate-the-related-products">4.4.2. Iterate the related products</h3>
+
+<blockquote>
+<p>Iterate the related products tag:</p>
+</blockquote>
+<pre class="highlight html"><code>{% if product.related_products.size &gt; 0 %}
+  {% for related_product in product.related_products %}
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{related_product.url}}"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"{{related_product | product_img_url}}"</span> <span class="na">alt=</span><span class="s">"{{ related_product.name }}"</span>  <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      {{ related_product.name }}
+      {{ related_product.price | money:store }}
+      {{ related_product.previous_price | money:store }}
+    <span class="nt">&lt;/p&gt;</span>
+  {% endfor %}
+{% endif %}
+</code></pre>
+
+<table>
+    <thead>
+        <td>Description</td>
+        <td> Tags</td>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Return related product name</td>
+            <td>{{ related_product.name }}</td>
+        </tr>
+        <tr>
+            <td>Return related product url </td>
+            <td>{{ related_product.url }}</td>
+        </tr>
+        <tr>
+            <td>Return related product image url</td>
+            <td>{{ related_product.product_image_url }}</td>
+        </tr>
+        <tr>
+            <td>Return related product price with currency</td>
+            <td>{{ related_product.price | money : store }}</td>
+        </tr>
+        <tr>
+            <td>Return related product previous price with currency</td>
+            <td>{{ related_product.previous_price | money : store }}</td>
+        </tr>
+    </tbody>
+</table>
+
+          <h2 id="4-5-cart-template-tags">4.5. Cart Template tags</h2>
+
+<h3 id="4-5-1-iterate-cart-items">4.5.1. Iterate Cart items</h3>
+
+<blockquote>
+<p>Iterate Cart items :</p>
+</blockquote>
+<pre class="highlight html"><code>{% for item in cart.items %}
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ item.product.url }}"</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">"{{ item.product | product_img_url: 'thumb' }}"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;&lt;/a&gt;</span>
+      {{ item.name }}{{ item.option.name }}
+    <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>
+      QUANTITY  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">size=</span><span class="s">"2"</span> <span class="na">value=</span><span class="s">"{{ item.quantity }}"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>
+      PRICE  {{ item.unit_price |  money: store |remove: ".00"}}
+    <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>SUB TOTAL {{ item.actual_price | money: store |remove: ".00"}}<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+{% endfor %}
+</code></pre>
+
+<p>{% for item in cart.items %} &hellip; {% endfor %}</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Return cart discounted total</td>
+            <td>{{ cart.total_discount }}</td>
+        </tr>
+        <tr>
+            <td>Return cart actual amount wiht  currency</td>
+            <td>{{ cart.actual_cart_amount | money : store }}</td>
+        </tr>
+        <tr>
+            <td>Return item with selected varient</td>
+            <td>{{ item.option.name }}</td>
+        </tr>
+        <tr>
+            <td>Return item quantity</td>
+            <td>{{ item.quantity }}</td>
+        </tr>
+        <tr>
+            <td>Return product thumb size image</td>
+            <td>{{ item.product | product_img_url: &lsquo;thumb&rsquo; }}</td>
+        </tr>
+        <tr>
+            <td>Return Products price with currency</td>
+            <td>{{ item.unit_price |  money: store }}</td>
+        </tr>
+        <tr>
+            <td>Return Products previous price with currency</td>
+            <td>{{ item.actual_price | money: store }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="4-5-2-cart-calculator">4.5.2. Cart Calculator</h3>
+
+<blockquote>
+<p>Cart Calculator :</p>
+</blockquote>
+<pre class="highlight html"><code>{% if cart.total_discount %}
+    Total  : <span class="nt">&lt;strong&gt;</span>{{ cart.actual_cart_amount | money : store }}<span class="nt">&lt;/strong&gt;</span>
+    Discount: <span class="nt">&lt;strong&gt;</span>{{ cart.total_discount | money : store }}<span class="nt">&lt;/strong&gt;</span>
+  {% if cart.gift_card_applied? %}
+        Gift Card Amount : <span class="nt">&lt;strong&gt;</span>{{ cart.gift_card_amount | money : store }}<span class="nt">&lt;/strong&gt;</span>
+  {% endif %}
+  Grand Total : <span class="nt">&lt;strong&gt;</span>{{ cart.discounted_cart_amount | minus: cart.gift_card_amount | money : store }}<span class="nt">&lt;/strong&gt;</span>
+{% else %}
+  {% if cart.gift_card_applied? %}
+    Gift Card Amount : <span class="nt">&lt;strong&gt;</span>{{ cart.gift_card_amount | money : store }}<span class="nt">&lt;/strong&gt;</span>
+  {% endif %}
+  Total : <span class="nt">&lt;strong&gt;</span>{{ cart.actual_cart_amount | minus: cart.gift_card_amount | money : store "}}<span class="nt">&lt;/strong&gt;</span>
+{% endif %}
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Return cart actual amount with currency</td>
+            <td>{{ cart.actual_cart_amount | money : store }}</td>
+        </tr>
+        <tr>
+            <td>Return cart discounted amount with currency</td>
+            <td>{{ cart.total_discount | money : store }}</td>
+        </tr>
+        <tr>
+            <td>Return applied gift card amount</td>
+            <td>{{ cart.gift_card_amount | money : store }}</td>
+        </tr>
+        <tr>
+            <td>Return total cart amount if giftcard and discount coupone is applied</td>
+            <td>{{ cart.discounted_cart_amount | minus: cart.gift_card_amount | money : store }}</td>
+        </tr>
+        <tr>
+            <td>Return total cart amount if giftcard is applied</td>
+            <td>{{ cart.actual_cart_amount | minus: cart.gift_card_amount | money : store }}</td>
+        </tr>
+    </tbody>
+</table>
+
+          <h2 id="4-6-error-tags">4.6. Error tags</h2>
+
+<p>These tags can be used in all the pages</p>
+
+<blockquote>
+<p>Error tags :</p>
+</blockquote>
+<pre class="highlight html"><code><span class="nt">&lt;p&gt;</span>{% store_alert_message_tag %}<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span> {% store_error_message_tag %} <span class="nt">&lt;/p&gt;</span>
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Return Alert and confirmation Messages</td>
+            <td>{% store_alert_message_tag %}</td>
+        </tr>
+        <tr>
+            <td>Returns Error Message / Messages  </td>
+            <td>{% store_error_message_tag %}</td>
+        </tr>
+    </tbody>
+</table>
+
+          <h2 id="4-7-login-form">4.7. Login form</h2>
+
+<blockquote>
+<p>Login form syntax :</p>
+</blockquote>
+<pre class="highlight html"><code>{% form 'customer_login' %}
+  {{ form.errors | default_errors }}
+  {% store_alert_message_tag %}
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">name=</span><span class="s">"customer_session[login]"</span> <span class="na">required=</span><span class="s">"required"</span>  <span class="na">placeholder=</span><span class="s">"Email Address"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"customer_session[password]"</span> <span class="na">required=</span><span class="s">"required"</span>  <span class="na">placeholder=</span><span class="s">"Password"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/customer/forgot_password"</span><span class="nt">&gt;</span>Forgot Password?<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Sign in"</span> <span class="nt">&gt;</span>
+{% endform %}
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags / Parameter</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Starting tag for Customer login form</td>
+            <td>{% form &lsquo;customer_login&rsquo; %}</td>
+        </tr>
+        <tr>
+            <td>Form validation</td>
+            <td>{{ form.errors | default_errors }}</td>
+        </tr>
+        <tr>
+            <td>End tag for Customer login form</td>
+            <td>{% endform %}</td>
+        </tr>
+        <tr>
+            <td>Email Address</td>
+            <td>name=&ldquo;customer_session[login]&rdquo;</td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>name=&ldquo;customer_session[password]&rdquo;</td>
+        </tr>
+    </tbody>
+</table>
+
+          <h2 id="4-8-registration-form">4.8. Registration form</h2>
+
+<blockquote>
+<p>Registration form syntax :</p>
+</blockquote>
+<pre class="highlight html"><code>{% form 'create_customer' %}
+  {{ form.errors | default_errors }}
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"customer[first_name]"</span> <span class="na">required=</span><span class="s">"required"</span> <span class="na">placeholder=</span><span class="s">"First Name"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"customer[last_name]"</span> <span class="na">required=</span><span class="s">"required"</span> <span class="na">placeholder=</span><span class="s">"Last Name"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">name=</span><span class="s">"customer[login]"</span> <span class="na">required=</span><span class="s">"required"</span> <span class="na">placeholder=</span><span class="s">"Email Address"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"customer[phone]"</span> <span class="na">required=</span><span class="s">"required"</span> <span class="na">placeholder=</span><span class="s">"Phone No."</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"customer[password]"</span> <span class="na">required=</span><span class="s">"required"</span> <span class="na">placeholder=</span><span class="s">"Password"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"customer[password_confirmation]"</span> <span class="na">required=</span><span class="s">"required"</span> <span class="na">placeholder=</span><span class="s">"Password again"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span>  <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Register"</span><span class="nt">&gt;</span>
+{% endform %}
+
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags / Parameter</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Starting tag for Create New Customer form</td>
+            <td>{% form &lsquo;create_customer&rsquo; %}</td>
+        </tr>
+        <tr>
+            <td>End tag for Create New Customer form</td>
+            <td>{% endform %}</td>
+        </tr>
+        <tr>
+            <td>Form validation</td>
+            <td>{{ form.errors | default_errors }}</td>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td>name=&ldquo;customer[first_name]&rdquo;</td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>name=&ldquo;customer[last_name]&rdquo;</td>
+        </tr>
+        <tr>
+            <td>Email Address</td>
+            <td>name=&ldquo;customer[login]&rdquo;</td>
+        </tr>
+        <tr>
+            <td>Phone No.</td>
+            <td>name=&ldquo;customer[phone]&rdquo;</td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>name=&ldquo;customer[password]&rdquo;</td>
+        </tr>
+        <tr>
+            <td>Password again</td>
+            <td>name=&ldquo;customer[password_confirmation]&rdquo;</td>
+        </tr>
+    </tbody>
+</table>
+
+          <h2 id="4-9-forgot-password-form">4.9. Forgot password form</h2>
+
+<blockquote>
+<p>Forgot password form syntax :</p>
+</blockquote>
+<pre class="highlight html"><code>{% form 'recover_customer_password' %}
+  {{ form.errors | default_errors }}
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">required=</span><span class="s">"required"</span> <span class="na">placeholder=</span><span class="s">"Email Address"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Submit"</span> <span class="na">class=</span><span class="s">"fr-btn button"</span><span class="nt">&gt;</span>
+{% endform %}
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags / Parameter</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Starting tag for forgot password form</td>
+            <td>{% form &lsquo;recover_customer_password&rsquo; %}</td>
+        </tr>
+        <tr>
+            <td>End tag for forgot password form</td>
+            <td>{% endform %}</td>
+        </tr>
+        <tr>
+            <td>Form validation</td>
+            <td>{{ form.errors | default_errors }}</td>
+        </tr>
+        <tr>
+            <td>Email Address</td>
+            <td>name=&ldquo;email&rdquo;</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+          <h2 id="4-10-password-reset-form">4.10. Password Reset form</h2>
+
+<blockquote>
+<p>Password Reset form syntax :</p>
+</blockquote>
+<pre class="highlight html"><code>{% form 'reset_customer_password' %}
+  {{ form.errors | default_errors }}
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"customer[password]"</span> <span class="na">required=</span><span class="s">"required"</span> <span class="na">placeholder=</span><span class="s">"Password"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"customer[password_confirmation]"</span> <span class="na">required=</span><span class="s">"required"</span>  <span class="na">placeholder=</span><span class="s">"Confirm Password"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Reset"</span> <span class="nt">&gt;</span>
+{% endform %}
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags / Parameter</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Starting tag for resetting Customer&rsquo;s password form</td>
+            <td>{% form &lsquo;reset_customer_password&rsquo; %}</td>
+        </tr>
+        <tr>
+            <td>End tag for resetting Customer&rsquo;s password form</td>
+            <td>{% endform %}</td>
+        </tr>
+        <tr>
+            <td>Form Validation</td>
+            <td>{{ form.errors | default_errors }}</td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>name=&ldquo;customer[password]&rdquo;</td>
+        </tr>
+        <tr>
+            <td>Confirm Password</td>
+            <td>name=&ldquo;customer[password_confirmation]&rdquo;</td>
+        </tr>
+    </tbody>
+</table>
+
+          <h2 id="4-11-iterate-customers-multiple-addresses">4.11. Iterate Customers Multiple Addresses</h2>
+
+<blockquote>
+<p>Iterate Customers Multiple Addresses:</p>
+</blockquote>
+<pre class="highlight html"><code>{% for cust in customer.addresses %}
+    <span class="nt">&lt;p&gt;</span>
+        {{ cust.name }}<span class="nt">&lt;br&gt;</span>
+        {{ cust.phone }}<span class="nt">&lt;br&gt;</span>
+        {{ customer.login }}<span class="nt">&lt;br&gt;</span>
+        {{ cust.address1 }}<span class="nt">&lt;br&gt;</span>
+        {{ cust.address2 }}<span class="nt">&lt;br&gt;</span>
+        {{ cust.city }}, {{ cust.state }},<span class="nt">&lt;br&gt;</span>
+        {{ cust.country_name }},<span class="nt">&lt;br&gt;</span>
+        {{ cust.zipcode }}
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/customer/edit_details?address_id={{cust.id}}"</span><span class="nt">&gt;</span>Edit Address<span class="nt">&lt;/a&gt;</span>
+{% endfor %}
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags / Parameter</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Starting tag for Multiple addresses</td>
+            <td>{% for cust in customer.addresses %}</td>
+        </tr>
+        <tr>
+            <td>End tag for Multiple addresses</td>
+            <td>{% endform %}</td>
+        </tr>
+        <tr>
+            <td>Returns Customer id</td>
+            <td>{{ cust.id }}</td>
+        </tr>
+        <tr>
+            <td>Returns Customer name</td>
+            <td>{{ cust.name }}</td>
+        </tr>
+        <tr>
+            <td>Returns Customer phone number</td>
+            <td>{{ cust.phone }}</td>
+        </tr>
+        <tr>
+            <td>Returns registered Customers email id</td>
+            <td>{{ customer.login }}</td>
+        </tr>
+        <tr>
+            <td>Returns Customer Address1</td>
+            <td>{{ cust.address1 }}</td>
+        </tr>
+        <tr>
+            <td>Returns Customer Address2</td>
+            <td>{{ cust.address2 }}</td>
+        </tr>
+        <tr>
+            <td>Returns Customer city</td>
+            <td>{{ cust.city }}</td>
+        </tr>
+        <tr>
+            <td>Returns Customer state</td>
+            <td>{{ cust.state }}</td>
+        </tr>
+        <tr>
+            <td>Returns customer country</td>
+            <td>{{ cust.country_name }}</td>
+        </tr>
+        <tr>
+            <td>Returns customer pincode</td>
+            <td>{{ cust.zipcode }}</td>
+        </tr>
+    </tbody>
+</table>
+
+          <h2 id="4-12-edit-customer-details">4.12. Edit Customer Details</h2>
+
+<blockquote>
+<p>Edit Customer Details:</p>
+</blockquote>
+<pre class="highlight html"><code>{% form 'change_customer_details' %}
+  {{ form.errors | default_errors }}
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"address[first_name]"</span> <span class="na">value=</span><span class="s">"{{ form.first_name }}"</span>  <span class="na">required=</span><span class="s">"required"</span> <span class="na">placeholder=</span><span class="s">"First Name"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"address[last_name]"</span> <span class="na">value=</span><span class="s">"{{ form.last_name }}"</span> <span class="na">required=</span><span class="s">"required"</span> <span class="na">placeholder=</span><span class="s">"Last Name"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"address[phone]"</span> <span class="na">value=</span><span class="s">"{{ form.phone }}"</span>  <span class="na">required=</span><span class="s">"required"</span> <span class="na">placeholder=</span><span class="s">"Phone No."</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"address[address1]"</span>  <span class="na">value=</span><span class="s">"{{ form.address1 }}"</span> <span class="na">required=</span><span class="s">"required"</span> <span class="na">placeholder=</span><span class="s">"ADDRESS LINE 1"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"address[address2]"</span> <span class="na">value=</span><span class="s">"{{ form.address2 }}"</span> <span class="na">placeholder=</span><span class="s">"ADDRESS LINE 2"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"address[country_id]"</span> <span class="na">data-default=</span><span class="s">"{{form.country_id}}"</span> <span class="na">id=</span><span class="s">"address_country_id"</span> <span class="na">required=</span><span class="s">"required"</span><span class="nt">&gt;</span>{% countries_for_select %}<span class="nt">&lt;/select&gt;</span>
+  <span class="nt">&lt;div</span>  <span class="na">id=</span><span class="s">"address_state"</span><span class="nt">&gt;</span>
+  {% if form.country_id %}
+    {% if form.country.has_states %}
+      <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"address[state_id]"</span> <span class="na">data-default=</span><span class="s">"{{form.state_id}}"</span> <span class="na">id=</span><span class="s">"address_state_id"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;option&gt;</span>Select State/Province<span class="nt">&lt;/option&gt;</span>
+      <span class="nt">&lt;/select&gt;</span>
+    {% else %}
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"address_state_name"</span> <span class="na">name=</span><span class="s">"address[state_name]"</span> <span class="na">value=</span><span class="s">"{{form.state_name }}"</span><span class="nt">/&gt;</span>
+    {% endif %}
+  {% endif %}
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"address[city]"</span> <span class="na">value=</span><span class="s">"{{ form.city }}"</span> <span class="na">required=</span><span class="s">"required"</span> <span class="na">placeholder=</span><span class="s">"CITY"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"address[zipcode]"</span> <span class="na">value=</span><span class="s">"{{ form.zipcode }}"</span> <span class="na">required=</span><span class="s">"required"</span> <span class="na">placeholder=</span><span class="s">"ZIP/POSTAL"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Update"</span><span class="nt">&gt;</span>
+{% endform %}
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">default_state_id</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#address_state_id"</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">'default'</span><span class="p">);</span>
+  <span class="k">if</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">default_state_id</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'undefined'</span><span class="p">)</span>
+    <span class="nx">default_state_id</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="k">else</span>
+    <span class="nx">default_state_id</span> <span class="o">=</span> <span class="nx">default_state_id</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+
+  <span class="kd">var</span> <span class="nx">country_dropdown</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#address_country_id'</span><span class="p">);</span>
+  <span class="nx">country_dropdown</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="nx">country_dropdown</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">'default'</span><span class="p">));</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#address_state_name"</span><span class="p">).</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span>
+        <span class="nx">get_states_for_country</span><span class="p">(</span><span class="nx">country_dropdown</span><span class="p">.</span><span class="nx">val</span><span class="p">());</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'#address_country_id'</span><span class="p">).</span><span class="nx">change</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">get_states_for_country</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">get_states_for_country</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">countryid</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">countryid</span> <span class="o">==</span> <span class="s1">''</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'#address_state'</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kd">var</span> <span class="nx">dropdown</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'&lt;select name="address[state_id]" id="address_state_id"&gt;'</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">blank</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'&lt;option&gt;'</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="na">value</span><span class="p">:</span> <span class="s2">""</span><span class="p">}).</span><span class="nx">html</span><span class="p">(</span><span class="s2">"Select State/Province"</span><span class="p">);</span>
+  <span class="nx">dropdown</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">blank</span><span class="p">);</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">data</span><span class="p">:</span> <span class="s1">'country_id='</span> <span class="o">+</span> <span class="nx">countryid</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
+    <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s1">'/checkouts/states_for_country'</span><span class="p">,</span>
+    <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">state_ids</span> <span class="o">=</span> <span class="p">[]</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">data</span> <span class="o">!=</span> <span class="s2">""</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">option</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'&lt;option&gt;'</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="na">value</span><span class="p">:</span> <span class="nx">value</span><span class="p">.</span><span class="nx">id</span><span class="p">}).</span><span class="nx">html</span><span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+            <span class="nx">state_ids</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+            <span class="nx">dropdown</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">option</span><span class="p">);</span>
+        <span class="p">});</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#address_state'</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#address_state'</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">dropdown</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">default_state_id</span> <span class="o">!=</span> <span class="s1">''</span> <span class="o">&amp;&amp;</span> <span class="nx">$</span><span class="p">.</span><span class="nx">inArray</span><span class="p">(</span><span class="nx">default_state_id</span><span class="p">,</span> <span class="nx">state_ids</span><span class="p">))</span>
+          <span class="nx">dropdown</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="nx">default_state_id</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="k">else</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#address_state'</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">"&lt;input type='text' name='address[state_name]' value='' placeholder='STATE/PROVINCE'&gt;"</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags / Parameter</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Starting tag for Change Customer address</td>
+            <td>{% form &lsquo;change_customer_details&rsquo; %}</td>
+        </tr>
+        <tr>
+            <td>End tag for Multiple addresses</td>
+            <td>{% endform %}</td>
+        </tr>
+        <tr>
+            <td>Form Validation</td>
+            <td>{{ form.errors | default_errors }}</td>
+        </tr>
+        <tr>
+            <td>Customer First name</td>
+            <td>name=&ldquo;address[first_name]&rdquo;  <br>    value=&ldquo;{{ form.first_name }}&rdquo; </td>
+        </tr>
+        <tr>
+            <td>Customer Last name</td>
+            <td>name=&ldquo;address[last_name]&rdquo; <br>  value=&ldquo;{{ form.last_name }}&rdquo;</td>
+        </tr>
+        <tr>
+            <td>Customer Phone number</td>
+            <td>name=&ldquo;address[phone]&rdquo; <br> value=&ldquo;{{ form.phone }}&rdquo; </td>
+        </tr>
+        <tr>
+            <td>Customer Address1</td>
+            <td>name=&ldquo;address[address1]&rdquo; <br> value=&ldquo;{{ form.address1 }}&rdquo;</td>
+        </tr>
+        <tr>
+            <td>Customer Address2</td>
+            <td>name=&ldquo;address[address2]&rdquo; <br> value=&ldquo;{{ form.address2 }}&rdquo;</td>
+        </tr>
+        <tr>
+            <td>Customer city</td>
+            <td>name=&ldquo;address[city]&rdquo; <br> value=&ldquo;{{ form.city }}&rdquo;</td>
+        </tr>
+        <tr>
+            <td>Customer zipcode</td>
+            <td>name=&ldquo;address[zipcode]&rdquo; <br> value=&ldquo;{{ form.zipcode }}&rdquo;</td>
+        </tr>
+    </tbody>
+</table>
+
+          <h2 id="4-13-customer-order-history-tags">4.13. Customer order History tags</h2>
+
+<blockquote>
+<p>Customer order History tags:</p>
+</blockquote>
+<pre class="highlight html"><code><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;th&gt;</span>
+    <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Order Status  <span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Order <span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Date of Order <span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Amount <span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Detail <span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+    <span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    {% for order in orders %}
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>{{ order.status }}<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>{{ order.number }}<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>{{ order.created_at | date: "%B %d, %Y" }}<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>{{ order.discounted_amount | money: store }}<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ order.details_path }}"</span><span class="nt">&gt;</span>View<span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+    {% endfor %}   
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</code></pre>
+
+<p>{% for order in orders %} &hellip; {% endfor %}
+<table>
+    <thead>
+    <tr>
+        <th>Description</th>
+        <th>Tags</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Returns order status</td>
+            <td>{{ order.status }}</td>
+        </tr>
+        <tr>
+            <td>Returns order number</td>
+            <td>{{ order.number }}</td>
+        </tr>
+        <tr>
+            <td>Returns Date when order place</td>
+            <td>{{ order.created_at | date: &ldquo;%B %d, %Y&rdquo; }}</td>
+        </tr>
+        <tr>
+            <td>Returns Total order value with currency</td>
+            <td>{{ order.discounted_amount | money: store }}</td>
+        </tr>
+        <tr>
+            <td>Returns url of order detail </td>
+            <td>{{ order.details_path }}</td>
+        </tr>
+    </tbody>
+</table></p>
+
+          <h2 id="4-14-customer-order-detail-template">4.14. Customer order detail template</h2>
+
+<h3 id="basic-order-details">Basic order Details</h3>
+
+<blockquote>
+<p>Basic order Detail tags :</p>
+</blockquote>
+<pre class="highlight html"><code><span class="nt">&lt;p&gt;</span>ORDER # <span class="nt">&lt;strong&gt;</span>{{ order.number }}<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Placed on:<span class="nt">&lt;/strong&gt;</span> {{ order.created_at | date: "%B %d, %Y" }}<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Payment Status:<span class="nt">&lt;/strong&gt;</span>{{ order.status }}<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Payment Mode:<span class="nt">&lt;/strong&gt;</span> {{ order.payment_mode }}<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Shipping Type:<span class="nt">&lt;/strong&gt;</span> {{ order.shipping_type }}<span class="nt">&lt;/p&gt;</span>
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Returns order number</td>
+            <td>{{ order.number }}</td>
+        </tr>
+        <tr>
+            <td>Returns date of order placed</td>
+            <td>{{ order.created_at | date: &ldquo;%B %d, %Y&rdquo; }}</td>
+        </tr>
+        <tr>
+            <td>Returns order status<br> eg: pending, packing, ready to dispatch, shipping etc.</td>
+            <td>{{ order.status }}</td>
+        </tr>
+        <tr>
+            <td>Returns the mode of payment</td>
+            <td>{{ order.payment_mode }}</td>
+        </tr>
+        <tr>
+            <td>Returns shipping type</td>
+            <td>{{ order.shipping_type }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="billing-address">Billing Address</h3>
+
+<blockquote>
+<p>Billing Address tags :</p>
+</blockquote>
+<pre class="highlight html"><code><span class="nt">&lt;p&gt;</span>
+  {{ order.billing_address.name |capitalize }}
+  {{ order.billing_address.address1 }}, 
+  {{ order.billing_address.address2 }}, 
+  {{ order.billing_address.city }}, 
+  {{ order.billing_address.state }},
+  {{ order.billing_address.country_name }} 
+  {{ order.billing_address.zipcode }}
+  <span class="nt">&lt;span&gt;</span>Phone: {{ order.billing_address.phone }}<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Returns Name on the billing address</td>
+            <td>{{ order.billing_address.name |capitalize }}</td>
+        </tr>
+        <tr>
+            <td>Returns address1 on the billing address</td>
+            <td>{{ order.billing_address.address1 }}</td>
+        </tr>
+        <tr>
+            <td>Returns address2 on the billing address</td>
+            <td>{{ order.billing_address.address2 }}</td>
+        </tr>
+        <tr>
+            <td>Returns city on the billing address</td>
+            <td>{{ order.billing_address.city }},</td>
+        </tr>
+        <tr>
+            <td>Returns state on the billing address</td>
+            <td>{{ order.billing_address.state }}</td>
+        </tr>
+        <tr>
+            <td>Returns country on the billing address</td>
+            <td>{{ order.billing_address.country_name }}</td>
+        </tr>
+        <tr>
+            <td>Returns zipcode on the billing address</td>
+            <td>{{ order.billing_address.zipcode }}</td>
+        </tr>
+        <tr>
+            <td>Returns phone number of the customer on the billing address</td>
+            <td>{{ order.billing_address.phone }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="shipping-address">Shipping Address</h3>
+
+<blockquote>
+<p>Shipping Address tags :</p>
+</blockquote>
+<pre class="highlight html"><code><span class="nt">&lt;p&gt;</span>
+  {{ order.shipping_address.address1 }},
+  {{ order.shipping_address.address2 }},
+  {{ order.shipping_address.city }}, 
+  {{ order.shipping_address.state }},
+  {{ order.shipping_address.country_name }}
+  {{ order.shipping_address.zipcode }}
+  <span class="nt">&lt;span&gt;</span>Phone: {{ order.shipping_address.phone }}<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Returns Name on the billing Shipping</td>
+            <td>{{ order.shipping_address.name |capitalize }}</td>
+        </tr>
+        <tr>
+            <td>Returns address1 on the billing Shipping</td>
+            <td>{{ order.shipping_address.address1 }}</td>
+        </tr>
+        <tr>
+            <td>Returns address2 on the billing Shipping</td>
+            <td>{{ order.shipping_address.address2 }}</td>
+        </tr>
+        <tr>
+            <td>Returns city on the billing Shipping</td>
+            <td>{{ order.shipping_address.city }},</td>
+        </tr>
+        <tr>
+            <td>Returns state on the billing Shipping</td>
+            <td>{{ order.shipping_address.state }}</td>
+        </tr>
+        <tr>
+            <td>Returns country on the billing Shipping</td>
+            <td>{{ order.shipping_address.country_name }}</td>
+        </tr>
+        <tr>
+            <td>Returns zipcode on the billing Shipping</td>
+            <td>{{ order.shipping_address.zipcode }}</td>
+        </tr>
+        <tr>
+            <td>Returns phone number of the customer on the Shipping address</td>
+            <td>{{ order.shipping_address.phone }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="iterate-order-item-list">Iterate Order Item list</h3>
+
+<blockquote>
+<p>Iterate Order Item list :</p>
+</blockquote>
+<pre class="highlight html"><code><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th&gt;&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>product<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>quantity<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>cost<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>total<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+      {% for item in order.items %}
+          <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>{{ item.name }}<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>{{ item.quantity }}<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>{{ item.unit_actual_price | money: store }}<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>{{ item.actual_price | money: store }}<span class="nt">&lt;/td&gt;</span>
+          <span class="nt">&lt;/tr&gt;</span>
+      {% endfor %}
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Staring tag for order item iteration</td>
+            <td>{% for item in order.items %}</td>
+        </tr>
+        <tr>
+            <td>Ending tag</td>
+            <td>{% endfor %}</td>
+        </tr>
+        <tr>
+            <td>Returns product name</td>
+            <td>{{ item.name }}</td>
+        </tr>
+        <tr>
+            <td>Returns product quantity</td>
+            <td>{{ item.quantity }}</td>
+        </tr>
+        <tr>
+            <td>Returns product unit price</td>
+            <td>{{ item.unit_actual_price | money: store }}</td>
+        </tr>
+        <tr>
+            <td>Returns product actual price</td>
+            <td>{{ item.actual_price | money: store }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="order-calculation">Order Calculation</h3>
+
+<blockquote>
+<p>Order Calculation :</p>
+</blockquote>
+<pre class="highlight html"><code>{% if order.discount %}
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">"4"</span><span class="nt">&gt;</span>Sub Total<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>{{ order.actual_amount | money: store }}<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">"4"</span><span class="nt">&gt;</span>Discount<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>{{ order.discount | money: store }}<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+{% endif %}
+<span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">"4"</span><span class="nt">&gt;</span>Sub Total<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>{{ order.sub_total | money: store}}<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+{% if order.is_tax_calculated %}
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">"4"</span><span class="nt">&gt;</span>Tax<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>{{ order.tax_amount | money: store}}<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+{% else %}
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">"4"</span><span class="nt">&gt;</span>*All applicable taxes included in total amount*<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>0<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+{% endif %}
+<span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">"4"</span><span class="nt">&gt;</span>Shipping <span class="err">&amp;</span> Handling<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>{{ order.shipping_charge | money: store }}<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+{% if order.payment_processing_charge %}
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">"4"</span><span class="nt">&gt;</span>Payment processing charges<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>{{ order.payment_processing_charge | money: store}}<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+{% endif %}
+<span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">"4"</span><span class="nt">&gt;</span>Grand Total<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>{{ order.grand_total | money: store }}<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Discounted amount with currency</td>
+            <td>{{ order.discount | money: store }}</td>
+        </tr>
+        <tr>
+            <td>Actual amount with currency</td>
+            <td>{{ order.actual_amount | money: store }}</td>
+        </tr>
+        <tr>
+            <td>Returns difference of actual amount and discounted amount with currency</td>
+            <td>{{ order.sub_total | money: store}}</td>
+        </tr>
+        <tr>
+            <td>Returns tax amount with currency </td>
+            <td>{{ order.tax_amount | money: store}}</td>
+        </tr>
+        <tr>
+            <td>Returns shipping charge with currency</td>
+            <td>{{ order.shipping_charge | money: store }}</td>
+        </tr>
+        <tr>
+            <td>Returns payment processing charge with currency</td>
+            <td>{{ order.payment_processing_charge | money: store}}</td>
+        </tr>
+    </tbody>
+</table>
+
+          <h2 id="4-15-change-password-template-tags">4.15. Change Password template tags</h2>
+
+<blockquote>
+<p>Change Password form :</p>
+</blockquote>
+<pre class="highlight html"><code>{% form 'change_customer_password' %}
+  {{ form.errors | default_errors }}
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"current_password"</span> <span class="na">required=</span><span class="s">"required"</span> <span class="na">placeholder=</span><span class="s">"Old Password"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"new_password"</span> <span class="na">required=</span><span class="s">"required"</span> <span class="na">placeholder=</span><span class="s">"New Password"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"confirm_password"</span> <span class="na">required=</span><span class="s">"required"</span> <span class="na">placeholder=</span><span class="s">"Confirm Password"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Update"</span> <span class="nt">&gt;</span>
+{% endform %}
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags / Parameter</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Starting tag for Changing Customer&rsquo;s password form</td>
+            <td>{% form &lsquo;change_customer_password&rsquo; %}</td>
+        </tr>
+        <tr>
+            <td>End tag for Changing Customer&rsquo;s password form</td>
+            <td>{% endform %}</td>
+        </tr>
+        <tr>
+            <td>Form Validation</td>
+            <td>{{ form.errors | default_errors }}</td>
+        </tr>
+        <tr>
+            <td>Old Password</td>
+            <td>name=&ldquo;current_password&rdquo;</td>
+        </tr>
+        <tr>
+            <td>New Password</td>
+            <td>name=&ldquo;new_password&rdquo;</td>
+        </tr>
+        <tr>
+            <td>Confirm Password</td>
+            <td>name=&ldquo;confirm_password&rdquo;</td>
+        </tr>
+    </tbody>
+</table>
+
+          <h2 id="4-16-favourite-products-template">4.16. Favourite products template</h2>
+
+<h3 id="iterate-favourite-products">Iterate Favourite products:</h3>
+
+<blockquote>
+<p>Iterate Favourite products:</p>
+</blockquote>
+<pre class="highlight html"><code>{% if favourite_products.size == 0 %}
+  <span class="nt">&lt;h5&gt;</span>No Product in wishlist.<span class="nt">&lt;/h5&gt;</span>
+{% else %}
+  <span class="nt">&lt;table&gt;</span>
+    <span class="nt">&lt;thead&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th&gt;</span>Product Image <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th&gt;</span>Product Name <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th&gt;</span>Price <span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/thead&gt;</span>
+    {% paginate favourite_products by 10 %} 
+      {% for favourite_product in favourite_products %}
+        <span class="nt">&lt;tr&gt;</span>
+          <span class="nt">&lt;td&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{favourite_product.url}}"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"{{favourite_product | product_img_url: 'thumb'}}"</span> <span class="na">alt=</span><span class="s">"{{ favourite_product.name }}"</span> <span class="na">class=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+          <span class="nt">&lt;/td&gt;</span>
+          <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{favourite_product.url}}"</span><span class="nt">&gt;</span>{{favourite_product.name}}<span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+          <span class="nt">&lt;td&gt;</span>{{ favourite_product.price | money:store}}<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+      {% endfor %} 
+    {% endpaginate %}
+  <span class="nt">&lt;/table&gt;</span>
+{% endif %}
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags / Parameter</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Starting tag for favourite products list with number of products</td>
+            <td>{% paginate favourite_products by 10 %} </td>
+        </tr>
+        <tr>
+            <td>End tag</td>
+            <td>{% endpaginate %}</td>
+        </tr>
+        <tr>
+            <td>Staring tag for iterate favourite products</td>
+            <td>{% for favourite_product in favourite_products %}</td>
+        </tr>
+        <tr>
+            <td>End tag</td>
+            <td>{% endfor %} </td>
+        </tr>
+        <tr>
+            <td>Returns Product Name</td>
+            <td>{{ favourite_product.name }}</td>
+        </tr>
+        <tr>
+            <td>Returns Product url</td>
+            <td>{{favourite_product.url}}</td>
+        </tr>
+        <tr>
+            <td>Returns Product image</td>
+            <td>{{favourite_product | product_img_url: &lsquo;thumb&rsquo;}}</td>
+        </tr>
+        <tr>
+            <td>Returns Product price with currency</td>
+            <td>{{ favourite_product.price | money:store}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="pagination-links-for-favourite-products">Pagination links for Favourite products</h3>
+
+<blockquote>
+<p>Pagination links for Favourite products:</p>
+</blockquote>
+<pre class="highlight html"><code>{% paginate favourite_products by 10 %} 
+  <span class="nt">&lt;ul&gt;</span>
+    {% if paginate.previous %}
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ paginate.previous.url }}"</span><span class="nt">&gt;</span>Prev<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    {% endif %}
+    {% if paginate.next %}
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ paginate.next.url }}"</span><span class="nt">&gt;</span>Next<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    {% endif %}
+  <span class="nt">&lt;/ul&gt;</span>
+{% endpaginate %}
+</code></pre>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Tags / Parameter</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Return url for previous page</td>
+            <td>{{ paginate.previous.url }}</td>
+        </tr>
+        <tr>
+            <td>Return url for next page</td>
+            <td>{{ paginate.next.url }}</td>
+        </tr>
+    </tbody>
+</table>
 
       </div>
       <div class="dark-box">
